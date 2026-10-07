@@ -1,0 +1,6 @@
+"use server";
+import {redirect} from "next/navigation";
+import {revalidatePath} from "next/cache";
+import {createClient} from "@/lib/supabase/server";
+export async function respondToQuote(formData:FormData){const order=String(formData.get("order_id")||"");const accept=String(formData.get("decision"))==="accept";const supabase=await createClient();const {error}=await supabase.rpc("respond_quote",{p_order:order,p_accept:accept});if(error)redirect("/orders/"+order+"?error=quote");revalidatePath("/orders");revalidatePath("/orders/"+order);redirect("/orders/"+order);}
+export async function submitPaymentReference(formData:FormData){const order=String(formData.get("order_id")||"");const provider=String(formData.get("provider")||"");const reference=String(formData.get("reference")||"").trim();const supabase=await createClient();const {error}=await supabase.rpc("submit_payment",{p_order:order,p_provider:provider,p_reference:reference});if(error)redirect("/orders/"+order+"?error=payment");revalidatePath("/orders/"+order);redirect("/orders/"+order+"?payment=submitted");}
