@@ -1,0 +1,1 @@
+export default function ProfilePage(){return <section className="container py-8"><h1 className="text-3xl font-bold">Mon espace</h1><div className="mt-6 card p-5"><p className="font-semibold">Profil YUQONI</p><p className="muted mt-1 text-sm">Authentification Supabase à connecter.</p></div></section>}
