@@ -116,6 +116,19 @@ test(
         timeout: 90000,
       });
       progress("Client real login passed");
+      async function verifyLogout() {
+        await goto("/profile");
+        await page.getByRole("button", { name: "Se déconnecter" }).click();
+        await page.waitForURL("**/login", { waitUntil: "commit" });
+        await goto("/orders");
+        await page.waitForURL("**/login?next=*", { waitUntil: "commit" });
+      }
+      if (process.env.UQONI_TEST_LOGOUT_ONLY === "1") {
+        await verifyLogout();
+        assert.deepEqual(errors, []);
+        progress("Focused logout regression passed");
+        return;
+      }
       async function api(role) {
         const u = accounts.find((a) => a.role === role),
           db = createClient(
@@ -244,6 +257,7 @@ test(
       await page.getByRole("button", { name: "Ajouter à mes favoris" }).click();
       await page.getByRole("button", { name: "Retirer des favoris" }).waitFor();
       await goto("/favorites");
+      await page.locator(".service-card").waitFor();
       assert.equal(await page.locator(".service-card").count(), 1);
       progress("Profile persistence and favorites passed");
       await goto("/support");
@@ -306,11 +320,7 @@ test(
         fullPage: true,
       });
       progress("Mobile, navigation and notifications passed");
-      await goto("/profile");
-      await page.getByRole("button", { name: "Se déconnecter" }).click();
-      await page.waitForURL("**/login", { waitUntil: "commit" });
-      await goto("/orders");
-      await page.waitForURL("**/login?next=*", { waitUntil: "commit" });
+      await verifyLogout();
       assert.deepEqual(errors, []);
       progress("Logout passed; no runtime errors");
       console.log(

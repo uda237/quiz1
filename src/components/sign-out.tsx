@@ -1,8 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 import { createClient } from "@/lib/supabase/client";
+const subscribeReady = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
 export function SignOut() {
+  const ready = useSyncExternalStore(subscribeReady, clientReady, serverReady);
   const [busy, setBusy] = useState(false),
     [error, setError] = useState("");
   return (
@@ -10,7 +14,7 @@ export function SignOut() {
       {error && <p role="alert">{error}</p>}
       <button
         className="btn-secondary"
-        disabled={busy}
+        disabled={!ready || busy}
         onClick={async () => {
           setBusy(true);
           const { error } = await createClient().auth.signOut();
