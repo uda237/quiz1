@@ -1,0 +1,1 @@
+export default function AdminPage(){return <main className="container py-10"><p className="text-sm font-bold text-violet-700">ADMIN YUQONI</p><h1 className="mt-2 text-3xl font-bold">Control Center</h1><p className="muted mt-3">Route réservée au futur rôle admin. Protection RBAC/RLS à connecter avant production.</p></main>}
