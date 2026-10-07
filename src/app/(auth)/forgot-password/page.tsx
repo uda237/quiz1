@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function ForgotPage(){return <main className="min-h-screen grid place-items-center bg-gray-50 p-4"><section className="card w-full max-w-md p-7"><h1 className="text-3xl font-bold">Mot de passe oublié</h1><p className="muted mt-2">Le flux de récupération sera connecté à Supabase Auth.</p><Link href="/login" className="btn-primary mt-6 w-full">Retour connexion</Link></section></main>}
