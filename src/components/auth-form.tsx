@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 
 import { createClient } from "@/lib/supabase/client";
 import { safeNext } from "@/lib/format";
@@ -11,7 +11,12 @@ const titles = {
   "forgot-password": "Retrouver votre accès",
   "reset-password": "Nouveau mot de passe",
 };
+const subscribeReady = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
+
 export function AuthForm({ mode }: { mode: Mode }) {
+  const ready = useSyncExternalStore(subscribeReady, clientReady, serverReady);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -140,7 +145,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
               ? "Vos services, vos commandes et vos projets vous attendent."
               : "Un accès personnel pour piloter vos projets digitaux."}
           </p>
-          <form className="form-stack" onSubmit={submit}>
+          <form className="form-stack" method="post" onSubmit={submit}>
             {mode === "register" && (
               <label className="field">
                 Nom complet
@@ -218,7 +223,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
                 {message}
               </p>
             )}
-            <button className="btn-primary" disabled={busy}>
+            <button className="btn-primary" disabled={!ready || busy}>
               {busy
                 ? "Traitement…"
                 : mode === "login"
