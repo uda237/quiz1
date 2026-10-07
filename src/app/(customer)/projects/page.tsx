@@ -1,0 +1,1 @@
+export default function ProjectsPage(){return <section className="container py-8"><h1 className="text-3xl font-bold">Mes projets</h1><div className="mt-6 card p-8 text-center muted">Aucun projet pour le moment.</div></section>}
