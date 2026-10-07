@@ -24,8 +24,12 @@ export default async function Project({
       <Link prefetch={false} href="/projects" className="back-link">
         ← Mes projets
       </Link>
-      <Heading eyebrow={p.project_number} title={p.name} />
-      <Badge value={p.status} />
+      <Heading eyebrow={p.project_number} title={p.name} description="Suivez l’avancement, les mises à jour et les livrables de votre projet." />
+      <div className="stats-grid">
+        <div className="card stat"><span className="muted">État du projet</span><strong><Badge value={p.status} /></strong><span>Statut actuel</span></div>
+        <div className="card stat"><span className="muted">Mises à jour</span><strong>{p.project_updates.length}</strong><span>Entrée(s) au journal</span></div>
+        <div className="card stat"><span className="muted">Livrables</span><strong>{p.deliverables.length}</strong><span>Élément(s) disponible(s)</span></div>
+      </div>
       <div className="detail-grid mt-6">
         <article className="card panel">
           <h2>Journal du projet</h2>
