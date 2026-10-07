@@ -1,0 +1,3 @@
+import {BottomNav} from "@/components/navigation/bottom-nav";
+import Link from "next/link";
+export default function CustomerLayout({children}:{children:React.ReactNode}){return <><header className="hidden md:block border-b border-gray-200"><div className="container h-16 flex items-center justify-between"><Link href="/home" className="font-black text-violet-700">YUQONI</Link><nav className="flex gap-6 text-sm font-semibold"><Link href="/services">Services</Link><Link href="/projects">Projets</Link><Link href="/orders">Commandes</Link><Link href="/profile">Profil</Link></nav></div></header><main className="pb-24 md:pb-8">{children}</main><BottomNav/></>}
