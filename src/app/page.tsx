@@ -1,2 +1,83 @@
 import Link from "next/link";
-export default function Landing(){return <main className="min-h-screen flex items-center"><section className="container py-16 text-center"><div className="mx-auto max-w-2xl"><div className="text-sm font-bold tracking-[.2em] text-violet-700">YUQONI DIGITAL AGENCY</div><h1 className="mt-5 text-4xl md:text-6xl font-bold tracking-tight">Vos services digitaux. Un seul espace.</h1><p className="muted mt-5 text-lg">Découvrez, commandez et suivez vos services et projets depuis une expérience simple et mobile-first.</p><div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center"><Link className="btn-primary" href="/home">Commencer</Link><Link className="min-h-12 px-6 rounded-xl border border-gray-200 inline-flex items-center justify-center font-semibold" href="/login">Se connecter</Link></div><div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm"><div className="card p-4">Qualité Premium</div><div className="card p-4">Livraison rapide</div><div className="card p-4">Paiement sécurisé</div></div></div></section></main>}
+import { ArrowUpRight } from "lucide-react";
+export default function Landing() {
+  return (
+    <>
+      <header className="site-header">
+        <div className="container header-inner">
+          <Link prefetch={false} href="/" className="wordmark">
+            UQONI<span>®</span>
+          </Link>
+          <Link prefetch={false} href="/login" className="btn-secondary">
+            Mon espace <ArrowUpRight size={16} />
+          </Link>
+        </div>
+      </header>
+      <main>
+        <section className="container landing">
+          <p className="eyebrow">GROWTH INFRASTRUCTURE FOR MODERN BUSINESS</p>
+          <h1>
+            Votre ambition.
+            <br />
+            <span>Notre exécution.</span>
+          </h1>
+          <p className="landing-copy">
+            Des systèmes solides. Des services digitaux précis.
+            <br />
+            Un espace unique pour construire et suivre vos projets.
+          </p>
+          <div className="button-row">
+            <Link prefetch={false} className="btn-primary" href="/services">
+              Explorer les services <ArrowUpRight size={18} />
+            </Link>
+            <Link prefetch={false} className="btn-secondary" href="/register">
+              Créer mon espace
+            </Link>
+          </div>
+          <div className="landing-strip">
+            <span>Architecture Business OS</span>
+            <span>Automatisation & IA</span>
+            <span>Design & Web</span>
+          </div>
+        </section>
+        <section className="container process-grid">
+          {[
+            [
+              "01",
+              "Un besoin bien cadré",
+              "Présentez votre projet. Nous préparons un devis adapté.",
+            ],
+            [
+              "02",
+              "Une décision claire",
+              "Validez le périmètre, les livrables et le montant avant de payer.",
+            ],
+            [
+              "03",
+              "Un suivi continu",
+              "Consultez les étapes de production et retrouvez vos livrables.",
+            ],
+          ].map(([n, t, b]) => (
+            <div key={n}>
+              <span className="step-number">{n}</span>
+              <h2>{t}</h2>
+              <p className="muted">{b}</p>
+            </div>
+          ))}
+        </section>
+      </main>
+      <footer className="site-footer container">
+        <span>© {new Date().getFullYear()} UQONI</span>
+        <div>
+          <Link prefetch={false} href="/privacy">
+            Confidentialité
+          </Link>
+          <Link prefetch={false} href="/terms">
+            Conditions
+          </Link>
+          <a href="mailto:uqoni.pro@gmail.com">Contact</a>
+        </div>
+      </footer>
+    </>
+  );
+}

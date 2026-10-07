@@ -1,1 +1,37 @@
-{"name":"yuqoni-digital-agency","version":"0.1.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"eslint ."},"dependencies":{"@supabase/ssr":"^0.7.0","@supabase/supabase-js":"^2.57.0","lucide-react":"^0.468.0","next":"^16.0.0","react":"^19.0.0","react-dom":"^19.0.0","zod":"^4.1.0"},"devDependencies":{"@eslint/eslintrc":"^3.0.0","@types/node":"^22.0.0","@types/react":"^19.0.0","@types/react-dom":"^19.0.0","eslint":"^9.0.0","eslint-config-next":"^16.0.0","postcss":"^8.0.0","tailwindcss":"^4.0.0","@tailwindcss/postcss":"^4.0.0","typescript":"^5.7.0"}}
+{
+  "name": "uqoni-digital-agency",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"*.mjs\" \"tests/*.mjs\""
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.7.0",
+    "@supabase/supabase-js": "2.117.2",
+    "lucide-react": "0.468.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.7",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.0",
+    "playwright": "1.61.1",
+    "postcss": "8.5.29",
+    "prettier": "3.9.9",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  },
+  "type": "module"
+}

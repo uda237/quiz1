@@ -1,2 +1,4 @@
-import Link from "next/link";
-export default function LoginPage(){return <main className="min-h-screen grid place-items-center bg-gray-50 p-4"><section className="card w-full max-w-md p-7"><div className="text-violet-700 font-black">YUQONI</div><h1 className="mt-4 text-3xl font-bold">Connexion</h1><p className="muted mt-2 text-sm">L’authentification Supabase sera branchée à ce formulaire.</p><form className="mt-6 space-y-4"><input className="w-full rounded-xl border border-gray-200 p-3" type="email" placeholder="Email" disabled/><input className="w-full rounded-xl border border-gray-200 p-3" type="password" placeholder="Mot de passe" disabled/><button className="btn-primary w-full opacity-60" disabled>Se connecter</button></form><div className="mt-5 flex justify-between text-sm"><Link href="/register">Créer un compte</Link><Link href="/forgot-password">Mot de passe oublié ?</Link></div></section></main>}
+import { AuthForm } from "@/components/auth-form";
+export default function Page() {
+  return <AuthForm mode="login" />;
+}

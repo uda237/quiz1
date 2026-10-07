@@ -1,2 +1,4 @@
-import Link from "next/link";
-export default function RegisterPage(){return <main className="min-h-screen grid place-items-center bg-gray-50 p-4"><section className="card w-full max-w-md p-7"><h1 className="text-3xl font-bold">Créer un compte</h1><p className="muted mt-2">Foundation prête pour Supabase Auth.</p><Link href="/login" className="btn-primary mt-6 w-full">Retour connexion</Link></section></main>}
+import { AuthForm } from "@/components/auth-form";
+export default function Page() {
+  return <AuthForm mode="register" />;
+}
