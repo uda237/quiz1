@@ -1,0 +1,1 @@
+export default function ServicesPage(){return <section className="container py-8"><h1 className="text-3xl font-bold">Tous les services</h1><p className="muted mt-2">Recherche, filtres et catalogue Supabase seront branchés ici.</p><div className="mt-6 card p-8 text-center muted">Catalogue en cours de connexion.</div></section>}
