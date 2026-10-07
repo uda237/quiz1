@@ -33,7 +33,8 @@ test(
           { env: process.env, stdio: ["ignore", "pipe", "pipe"] },
         );
     let logs = "",
-      browser;
+      browser,
+      context;
     server?.stdout.on("data", (d) => (logs += d));
     server?.stderr.on("data", (d) => (logs += d));
     try {
@@ -56,7 +57,7 @@ test(
           ? { server: process.env.HTTPS_PROXY, bypass: "127.0.0.1,localhost" }
           : undefined,
       });
-      const context = await browser.newContext({
+      context = await browser.newContext({
         viewport: { width: 1360, height: 900 },
         ignoreHTTPSErrors: true,
       });
@@ -334,6 +335,7 @@ test(
       );
       throw error;
     } finally {
+      await context?.unrouteAll({ behavior: "ignoreErrors" });
       await browser?.close();
       server?.kill();
     }
