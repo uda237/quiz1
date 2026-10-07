@@ -1,0 +1,1 @@
+export default function OrdersPage(){return <section className="container py-8"><h1 className="text-3xl font-bold">Mes commandes</h1><div className="mt-6 card p-8 text-center muted">Aucune commande pour le moment.</div></section>}
