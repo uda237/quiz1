@@ -4,12 +4,15 @@ import { useState, useEffect, useSyncExternalStore } from "react";
 
 import { createClient } from "@/lib/supabase/client";
 import { safeNext } from "@/lib/format";
-type Mode = "login" | "register" | "forgot-password" | "reset-password";
+import { authErrorMessage } from "@/lib/auth-feedback";
+type Mode =
+  "login" | "register" | "forgot-password" | "reset-password" | "verify-email";
 const titles = {
   login: "Bienvenue chez UQONI",
   register: "Créons votre espace",
   "forgot-password": "Retrouver votre accès",
   "reset-password": "Nouveau mot de passe",
+  "verify-email": "Confirmer votre adresse email",
 };
 const subscribeReady = () => () => {};
 const clientReady = () => true;
@@ -20,6 +23,9 @@ export function AuthForm({ mode }: { mode: Mode }) {
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const [success, setSuccess] = useState(false);
+  const confirmationFailed =
+    ready &&
+    new URLSearchParams(window.location.search).get("error") === "confirmation";
   useEffect(() => {
     if (mode !== "reset-password") return;
     const hash = new URLSearchParams(window.location.hash.slice(1));
@@ -36,14 +42,15 @@ export function AuthForm({ mode }: { mode: Mode }) {
   }, [mode]);
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (busy) return;
     setBusy(true);
     setMessage("");
     setSuccess(false);
     const form = new FormData(e.currentTarget);
     const email = String(form.get("email") || "").trim();
     const password = String(form.get("password") || "");
-    const db = createClient();
     try {
+      const db = createClient();
       if (mode === "login") {
         const { error } = await db.auth.signInWithPassword({ email, password });
         if (error) throw error;
@@ -83,6 +90,20 @@ export function AuthForm({ mode }: { mode: Mode }) {
           "Si ce compte existe, un lien de récupération sera envoyé à son adresse email.",
         );
       }
+      if (mode === "verify-email") {
+        const { error } = await db.auth.resend({
+          type: "signup",
+          email,
+          options: {
+            emailRedirectTo: `${window.location.origin}/auth/callback`,
+          },
+        });
+        if (error) throw error;
+        setSuccess(true);
+        setMessage(
+          "Demande prise en compte. Si un compte attend confirmation pour cette adresse, un nouveau lien sera envoyé. Vérifiez aussi les courriers indésirables.",
+        );
+      }
       if (mode === "reset-password") {
         if (password !== form.get("confirm"))
           throw new Error("Les mots de passe ne correspondent pas.");
@@ -100,17 +121,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
         setMessage("Mot de passe changé. Vous pouvez vous connecter.");
       }
     } catch (error) {
-      const text =
-        error instanceof Error ? error.message : "Une erreur est survenue.";
-      setMessage(
-        text.includes("Invalid login")
-          ? "Email ou mot de passe incorrect."
-          : text.includes("Email not confirmed")
-            ? "Confirmez votre adresse email avant de vous connecter."
-            : text.includes("rate limit")
-              ? "Trop de tentatives. Réessayez dans quelques minutes."
-              : text,
-      );
+      setMessage(authErrorMessage(error));
     } finally {
       setBusy(false);
     }
@@ -143,9 +154,17 @@ export function AuthForm({ mode }: { mode: Mode }) {
           <p className="muted">
             {mode === "login"
               ? "Vos services, vos commandes et vos projets vous attendent."
-              : "Un accès personnel pour piloter vos projets digitaux."}
+              : mode === "verify-email"
+                ? "Saisissez l’adresse utilisée à l’inscription pour demander un nouveau lien."
+                : "Un accès personnel pour piloter vos projets digitaux."}
           </p>
           <form className="form-stack" method="post" onSubmit={submit}>
+            {confirmationFailed && !message && (
+              <p role="alert" className="notice error">
+                Le lien est invalide, expiré ou déjà utilisé. Demandez un
+                nouveau lien avec le formulaire ci-dessous.
+              </p>
+            )}
             {mode === "register" && (
               <label className="field">
                 Nom complet
@@ -170,7 +189,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
                 />
               </label>
             )}
-            {mode !== "forgot-password" && (
+            {!["forgot-password", "verify-email"].includes(mode) && (
               <label className="field">
                 Mot de passe
                 <input
@@ -232,10 +251,17 @@ export function AuthForm({ mode }: { mode: Mode }) {
                     ? "Créer mon compte"
                     : mode === "forgot-password"
                       ? "Envoyer le lien"
-                      : "Changer le mot de passe"}
+                      : mode === "verify-email"
+                        ? "Renvoyer le lien de confirmation"
+                        : "Changer le mot de passe"}
             </button>
           </form>
           <div className="auth-links">
+            {["login", "register"].includes(mode) && (
+              <Link prefetch={false} href="/verify-email">
+                Renvoyer le lien de confirmation
+              </Link>
+            )}
             <Link
               prefetch={false}
               href={mode === "login" ? "/register" : "/login"}
