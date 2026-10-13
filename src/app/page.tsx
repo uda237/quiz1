@@ -40,31 +40,6 @@ export default function Landing() {
             <span>Design & Web</span>
           </div>
         </section>
-        <section className="container process-grid">
-          {[
-            [
-              "01",
-              "Un besoin bien cadré",
-              "Présentez votre projet. Nous préparons un devis adapté.",
-            ],
-            [
-              "02",
-              "Une décision claire",
-              "Validez le périmètre, les livrables et le montant avant de payer.",
-            ],
-            [
-              "03",
-              "Un suivi continu",
-              "Consultez les étapes de production et retrouvez vos livrables.",
-            ],
-          ].map(([n, t, b]) => (
-            <div key={n}>
-              <span className="step-number">{n}</span>
-              <h2>{t}</h2>
-              <p className="muted">{b}</p>
-            </div>
-          ))}
-        </section>
       </main>
       <footer className="site-footer container">
         <span>© {new Date().getFullYear()} UQONI</span>
