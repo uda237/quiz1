@@ -43,6 +43,12 @@ Créer et confirmer le compte **uqoni.pro@gmail.com**, se connecter, ouvrir `/pr
 
 ## Réglages email à vérifier avant ouverture aux clients
 
+### Reprise des liens d’authentification
+
+La page `/verify-email` permet de demander un nouveau lien de confirmation depuis la connexion ou l’inscription. Un lien invalide ou expiré affiche une explication et conduit au bon formulaire : confirmation d’adresse ou récupération du mot de passe. La demande de renvoi ne crée pas de nouveau compte et ne confirme pas automatiquement une adresse. Les messages restent génériques pour les comptes inconnus et les erreurs internes. Les limites d’envoi Supabase restent applicables.
+
+L’interface de renvoi ne remplace pas la configuration SMTP ni la validation des redirections. Un message de prise en compte ne prouve pas que l’email a été reçu.
+
 Dans Supabase → Authentication → URL Configuration :
 
 - Définir **Site URL** sur le domaine stable de l’application.
@@ -74,5 +80,14 @@ npx playwright install chromium
 UQONI_TEST_FIXTURES=/chemin/comptes-temporaires.json \
 node --env-file=.env.local --test tests/*.test.mjs
 ```
+
+Pour vérifier les nouvelles pages et redirections d’authentification sans comptes de test ni envoi d’email :
+
+```sh
+npm run build
+UQONI_AUTH_HTTP=1 npm test
+```
+
+Le test démarre son propre serveur Next.js, vérifie les points d’entrée et les redirections des liens invalides, puis arrête le serveur. Il ne valide pas la réception des emails ni un parcours de connexion réel. Pour une Preview, fournir `UQONI_AUTH_TEST_URL` à la place.
 
 Format du fichier de test : tableau de trois objets `{id,email,password,role}` avec `role` égal à `client`, `other` et `admin`. Utiliser uniquement des comptes temporaires dédiés, et supprimer leurs demandes, paiements, projets, profils et sessions après le test. Les identifiants ne doivent pas être committés.
