@@ -36,7 +36,7 @@ export default function OneLauncher() {
             <h1 id="hero-heading" className="mt-4 max-w-lg text-[clamp(2rem,8vw,3.8rem)] font-black leading-[1.08] tracking-tight">Vos projets digitaux, plus loin avec UQONI.</h1>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
           </div>
-          <div className="relative w-full overflow-hidden bg-[#8CC6F0]"><Image src="/one/uqoni-ecosystem-hero.svg" alt="Illustration UQONI : ordinateur, application mobile et assistant IA" width={960} height={460} priority className="block h-auto w-full" /></div>
+          <div className="relative w-full overflow-hidden bg-[#8CC6F0]"><Image src="/one/uqoni-ecosystem-hero.svg" alt="Illustration UQONI : ordinateur, application mobile et assistant IA" width={960} height={460} priority className="block h-auto w-full object-contain" sizes="(max-width: 640px) 100vw, 960px" /></div>
         </section>
         <section aria-label="Accès rapide UQONI" className="mt-4">
           <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#087EA8] px-4 py-4 text-white sm:px-6">
