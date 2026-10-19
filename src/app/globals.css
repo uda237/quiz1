@@ -891,12 +891,6 @@ strong {
 .skip-link:focus {
   top: 10px;
 }
-.mt-6 {
-  margin-top: 24px;
-}
-.text-sm {
-  font-size: 12px;
-}
 @keyframes pulse {
   50% {
     opacity: 0.5;
