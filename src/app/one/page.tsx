@@ -15,18 +15,18 @@ const modules = [
 ];
 export default function OneLauncher() {
   return (
-    <main className="min-h-screen scroll-smooth bg-white pb-28 text-[#0B1020]">
+    <main className="min-h-screen min-w-0 overflow-x-clip scroll-smooth bg-white pb-28 text-[#0B1020]">
       <header className="sticky top-0 z-20 border-b border-slate-100 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-4">
-          <Link href="/one" className="text-2xl font-black tracking-[-.08em] text-[#0248D7]" aria-label="UQONI ONE, accueil">UQONI<span className="ml-1 rounded-full bg-[#0248D7] px-2 py-1 text-xs tracking-normal text-white">ONE</span></Link>
-          <nav aria-label="Actions rapides" className="flex items-center gap-4 text-[#0B1020]">
+        <div className="mx-auto flex max-w-6xl min-w-0 items-center justify-between gap-2 px-4 py-3 sm:px-5 sm:py-4">
+          <Link href="/one" className="shrink-0 text-xl font-black tracking-[-.06em] text-[#0248D7] sm:text-2xl" aria-label="UQONI ONE, accueil">UQONI<span className="ml-1 rounded-full bg-[#0248D7] px-2 py-1 text-xs tracking-normal text-white">ONE</span></Link>
+          <nav aria-label="Actions rapides" className="flex shrink-0 items-center gap-2 text-[#0B1020] sm:gap-4">
             <a href="#applications" aria-label="Voir les applications" className="rounded-lg p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Grid2X2 size={21}/></a>
             <a href="#explorer" aria-label="Explorer les services" className="rounded-lg p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Search size={21}/></a>
             <a href="#nouveautes" aria-label="Voir les nouveautés"><Bell size={21}/></a><Link href="/login" aria-label="Connexion au compte" className="rounded-full bg-[#E9EDF9] p-2 text-[#0248D7]"><Users size={21}/></Link>
           </nav>
         </div>
       </header>
-      <div className="mx-auto max-w-6xl px-5">
+      <div className="mx-auto max-w-6xl min-w-0 px-4 sm:px-5">
         <section className="relative isolate mt-6 overflow-hidden rounded-[28px] bg-gradient-to-br from-[#2563EB] via-[#0248D7] to-[#0B1020] px-7 py-11 text-white sm:px-12 sm:py-16">
           <div className="relative z-10 max-w-xl">
             <span className="rounded-full border border-white/30 px-3 py-1 text-xs font-semibold">Bienvenue dans UQONI ONE</span>
@@ -80,11 +80,11 @@ export default function OneLauncher() {
         <section className="mt-12 rounded-3xl bg-slate-100 p-7"><div className="flex items-start gap-4"><ShieldCheck className="shrink-0 text-[#0248D7]" size={30}/><div><h2 className="text-lg font-bold">Vos données, vos accès</h2><p className="mt-2 text-sm text-slate-600">Les espaces privés nécessitent une connexion. Les modules en préparation ne donnent pas accès aux données internes.</p><Link href="/workspace" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#0248D7]">Espace équipe (accès autorisé uniquement) <ArrowRight size={15}/></Link></div></div></section>
         <footer className="py-10 text-center text-sm text-slate-500">UQONI ONE · Growth Infrastructure</footer>
       </div>
-      <nav aria-label="Navigation mobile" className="fixed bottom-0 left-0 right-0 z-30 flex justify-around border-t border-slate-200 bg-white px-3 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 shadow-lg sm:hidden">
-        <Link href="/one" className="flex flex-col items-center gap-1 text-[#0248D7]"><House size={22}/><span className="text-[11px] font-semibold">Accueil</span></Link>
-        <Link href="/services" className="flex flex-col items-center gap-1 text-slate-600"><BriefcaseBusiness size={22}/><span className="text-[11px]">Services</span></Link>
-        <Link href="/client" className="flex flex-col items-center gap-1 text-slate-600"><LayoutDashboard size={22}/><span className="text-[11px]">Mon espace</span></Link>
-        <Link href="/login" className="flex flex-col items-center gap-1 text-slate-600"><Users size={22}/><span className="text-[11px]">Compte</span></Link>
+      <nav aria-label="Navigation mobile" className="fixed inset-x-0 bottom-0 z-30 grid w-full grid-cols-4 items-stretch border-t border-slate-200 bg-white/95 px-2 pt-2 pb-[calc(env(safe-area-inset-bottom)+8px)] shadow-[0_-6px_24px_rgba(11,16,32,0.08)] backdrop-blur-lg sm:hidden">
+        <Link href="/one" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-[#0248D7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><House size={22}/><span className="text-[11px] font-semibold">Accueil</span></Link>
+        <Link href="/services" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><BriefcaseBusiness size={22}/><span className="text-[11px]">Services</span></Link>
+        <Link href="/client" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><LayoutDashboard size={22}/><span className="text-[11px]">Mon espace</span></Link>
+        <Link href="/login" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Users size={22}/><span className="text-[11px]">Compte</span></Link>
       </nav>
     </main>
   );
