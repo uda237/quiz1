@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
 
-// Static regression guards. These do NOT replace live authentication or RLS tests.
+// Static source checks only; no authenticated network requests or database RLS verification.
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
 test("client portal requires verified Supabase user on server", () => {
@@ -30,4 +30,20 @@ test("login redirect is restricted to same-origin relative paths", () => {
   assert.match(source, /value\?\.startsWith\("\/"\)/);
   assert.match(source, /!value\.startsWith\("\/\/"\)/);
   assert.match(source, /: "\/home"/);
+});
+
+test("session uses verified auth identity and checks the database profile role", () => {
+  const source = read("src/lib/session.ts");
+  assert.match(source, /await db\.auth\.getUser\(\)/);
+  assert.match(source, /\.from\("profiles"\)/);
+  assert.match(source, /\.eq\("id", user\.id\)/);
+  assert.match(source, /if \(s\.profile\?\.role !== "admin"\) redirect\("\/home"\)/);
+});
+
+test("Supabase server client uses a public key rather than a service-role key", () => {
+  const source = read("src/lib/supabase/server.ts");
+  assert.match(source, /NEXT_PUBLIC_SUPABASE_URL/);
+  assert.match(source, /NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY/);
+  assert.match(source, /NEXT_PUBLIC_SUPABASE_ANON_KEY/);
+  assert.doesNotMatch(source, /SUPABASE_SERVICE_ROLE_KEY|service_role/);
 });
