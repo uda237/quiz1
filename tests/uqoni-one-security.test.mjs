@@ -21,7 +21,7 @@ test("workspace uses existing server-side administrator gate", () => {
 test("launcher links to protected portals without granting roles", () => {
   const source = read("src/app/one/page.tsx");
   assert.match(source, /href: "\/client"/);
-  assert.match(source, /href: "\/workspace"/);
+  assert.match(source, /href="\/workspace"/);
   assert.doesNotMatch(source, /service_role|setUserRole|updateUserRole/);
 });
 
