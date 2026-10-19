@@ -18,7 +18,7 @@ const modules = [
 ];
 export default function OneLauncher() {
   return (
-    <main className="min-h-screen min-w-0 scroll-smooth bg-white pb-28 text-[#0B1020]">
+    <main className="min-h-screen min-w-0 scroll-smooth bg-white pb-28 text-[#0B1020] [scroll-padding-top:88px]">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur" aria-label="En-tête UQONI ONE">
         <div className="mx-auto flex max-w-6xl min-w-0 items-center justify-between gap-2 px-4 py-3 sm:px-5 sm:py-4">
           <Link href="/one" className="shrink-0 text-xl font-black tracking-[-.06em] text-[#0248D7] sm:text-2xl" aria-label="UQONI ONE, accueil">UQONI<span className="ml-1 rounded-full bg-[#0248D7] px-2 py-1 text-xs tracking-normal text-white">ONE</span></Link>
@@ -51,14 +51,14 @@ export default function OneLauncher() {
             {modules.map(({name,icon:Icon})=><div key={name} className="flex aspect-square min-w-0 flex-col items-center justify-center gap-1 rounded-xl bg-white p-1 text-center shadow-sm sm:gap-1.5 sm:p-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#EEF3FF] min-[390px]:h-9 min-[390px]:w-9"><Icon className="text-[#0248D7]" size={22}/></span><span className="line-clamp-2 w-full break-words text-[9px] font-bold leading-tight min-[390px]:text-[10px] sm:text-xs">{name}</span></div>)}
           </div>
         </section>
-        <section aria-labelledby="whats-new-heading" className="mt-10">
+        <section id="nouveautes" aria-labelledby="whats-new-heading" className="mt-10 scroll-mt-24">
           <h2 id="whats-new-heading" className="text-2xl font-black sm:text-3xl">Quoi de neuf ?</h2>
           <p className="mt-1 text-sm text-slate-600">Découvrez les nouveautés de l'écosystème UQONI</p>
           <div className="mt-4 grid grid-cols-4 gap-2 rounded-3xl border border-slate-200 p-3 sm:gap-4 sm:p-5">
             {[{label:"Agence",icon:BriefcaseBusiness},{label:"Academy",icon:GraduationCap},{label:"Creative",icon:Palette},{label:"UQONI AI",icon:Sparkles}].map(({label,icon:Icon})=><div key={label} className="flex min-w-0 flex-col items-center gap-2 text-center"><span className="flex aspect-square w-full max-w-16 items-center justify-center rounded-full border-2 border-[#0248D7] bg-[#EEF3FF] text-[#0248D7] sm:max-w-20"><Icon size={25}/></span><span className="text-[10px] font-semibold leading-tight sm:text-sm">{label}</span></div>)}
           </div>
         </section>
-        <section aria-labelledby="discover-heading" className="mt-12">
+        <section aria-labelledby="discover-heading" className="mt-12 scroll-mt-24">
           <div className="flex items-start justify-between gap-3"><div><h2 id="discover-heading" className="text-2xl font-black sm:text-3xl">Explorer UQONI</h2><p className="mt-1 text-sm text-slate-600">Découvrez nos solutions et savoir-faire</p></div><Link href="/services" className="shrink-0 pt-1 text-sm font-bold text-[#0248D7]">Tout voir</Link></div>
           <Link href="/services" className="group relative mt-5 block max-w-lg overflow-hidden rounded-[26px] bg-gradient-to-br from-[#123D9C] via-[#0248D7] to-[#0B1020] p-5 text-white shadow-sm">
             <div aria-hidden="true" className="grid grid-cols-2 gap-3 pb-20 sm:gap-4">
@@ -67,7 +67,7 @@ export default function OneLauncher() {
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1020] via-[#0B1020]/90 to-transparent px-5 pb-5 pt-12"><h3 className="text-xl font-extrabold">Création, innovation et IA</h3><p className="mt-1 text-sm text-white/85">Explorez les possibilités pour votre activité <ArrowRight size={15} className="inline"/></p></div>
           </Link>
         </section>
-        <section aria-labelledby="finance-heading" className="mt-10">
+        <section aria-labelledby="finance-heading" className="mt-10 scroll-mt-24">
           <div className="flex items-end justify-between gap-3"><div><h2 id="finance-heading" className="text-2xl font-black sm:text-3xl">Finance</h2><p className="mt-1 text-sm text-slate-600">Des solutions pour accompagner votre activité</p></div><a href="#explorer" className="shrink-0 text-sm font-bold text-[#0248D7]">Tout voir</a></div>
           <div className="mt-4 flex snap-x gap-3 overflow-x-auto pb-3">
             <article className="flex min-h-44 w-[78%] max-w-sm shrink-0 snap-start flex-col justify-between rounded-3xl bg-[#0B1020] p-5 text-white"><Wallet size={35} className="text-[#8ADAF5]"/><div><h3 className="text-xl font-extrabold">Finance UQONI</h3><p className="mt-1 text-sm text-slate-300">Un espace dédié aux opérations financières</p><span className="mt-3 inline-block text-xs text-slate-300">En préparation</span></div></article>
