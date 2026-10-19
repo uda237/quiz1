@@ -44,7 +44,7 @@ export default function OneLauncher() {
             {primary.map(({name,detail,href,icon:Icon})=><Link key={name} href={href} className="group flex min-h-28 min-w-0 flex-col justify-between overflow-hidden rounded-2xl bg-white p-3 shadow-sm transition hover:shadow-md sm:min-h-36 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0248D7] sm:p-5"><div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E9EDF9] transition group-hover:scale-105"><Icon className="text-[#0248D7]" size={25}/></div><div><h3 className="mt-2 text-sm font-bold">{name}</h3><p className="mt-1 text-xs text-slate-600">{detail}</p></div></Link>)}
           </div>
           <div className="mt-2 grid grid-cols-4 gap-2 sm:gap-3">
-            {modules.map(({name,icon:Icon})=><div key={name} className="flex min-h-24 min-w-0 flex-col items-center justify-center rounded-xl bg-white p-1.5 text-center shadow-sm sm:p-3"><div className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF3FF]"><Icon className="text-[#0248D7]" size={22}/></div><span className="break-words text-[10px] font-bold leading-tight sm:text-xs">{name}</span></div>)}
+            {modules.map(({name,icon:Icon})=><div key={name} className="flex aspect-square min-w-0 flex-col items-center justify-center rounded-xl bg-white p-1.5 text-center shadow-sm sm:p-3"><div className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF3FF]"><Icon className="text-[#0248D7]" size={22}/></div><span className="break-words text-[10px] font-bold leading-tight sm:text-xs">{name}</span></div>)}
           </div>
         </section>
         <section id="nouveautes" aria-labelledby="news-heading" className="mt-10 scroll-mt-24">
