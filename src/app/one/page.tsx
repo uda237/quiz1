@@ -45,23 +45,6 @@ export default function OneLauncher() {
             {modules.map(({name,icon:Icon})=><div key={name} className="flex aspect-square min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white p-1.5 text-center shadow-sm sm:p-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EEF3FF]"><Icon className="text-[#0248D7]" size={22}/></span><span className="line-clamp-2 w-full break-words text-[10px] font-bold leading-tight sm:text-xs">{name}</span></div>)}
           </div>
         </section>
-        <section id="nouveautes" aria-labelledby="news-heading" className="mt-10 scroll-mt-24">
-          <div className="mb-5">
-            <h2 id="news-heading" className="text-3xl font-black tracking-tight text-[#101010] sm:text-4xl">À découvrir</h2>
-            <p className="mt-1 text-sm text-slate-500 sm:text-base">Des expériences sélectionnées pour vous</p>
-          </div>
-          <div className="flex gap-3 overflow-x-auto pb-3 sm:gap-4">
-            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
-              <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#0248D7] to-[#0B1020]"><Globe2 className="text-white" size={55} strokeWidth={1.4}/></div>
-              <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Sites web</div>
-            </Link>
-            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
-              <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#D99408] to-[#0B1020]"><Palette className="text-white" size={55} strokeWidth={1.4}/></div>
-              <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Design créatif</div>
-            </Link>
-          </div>
-          <p className="mt-20 select-none text-[clamp(3.1rem,12vw,8rem)] font-black leading-[0.95] tracking-[-0.07em] text-[#B9B9B9] sm:mt-28">Avec passion,<span className="block">par UQONI.</span></p>
-        </section>
         <section className="mt-12">
           <div className="mb-5 flex items-end justify-between"><div><h2 className="text-2xl font-black">Solutions digitales</h2><p className="text-sm text-slate-600">Vos idées, nos expertises</p></div><a href="#explorer" className="text-sm font-bold text-[#0248D7]">Tout voir</a></div>
           <div aria-label="Parcourir les solutions digitales" className="flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-4 [-webkit-overflow-scrolling:touch] sm:gap-4">
@@ -83,6 +66,23 @@ export default function OneLauncher() {
           </article>
         </section>
         <section className="mt-12 rounded-3xl bg-slate-100 p-7"><div className="flex items-start gap-4"><ShieldCheck className="shrink-0 text-[#0248D7]" size={30}/><div><h2 className="text-lg font-bold">Vos données, vos accès</h2><p className="mt-2 text-sm text-slate-600">Les espaces privés nécessitent une connexion. Les modules en préparation ne donnent pas accès aux données internes.</p><Link href="/workspace" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#0248D7]">Espace équipe (accès autorisé uniquement) <ArrowRight size={15}/></Link></div></div></section>
+        <section id="nouveautes" aria-labelledby="news-heading" className="mt-10 scroll-mt-24">
+          <div className="mb-5">
+            <h2 id="news-heading" className="text-3xl font-black tracking-tight text-[#101010] sm:text-4xl">À découvrir</h2>
+            <p className="mt-1 text-sm text-slate-500 sm:text-base">Des expériences sélectionnées pour vous</p>
+          </div>
+          <div className="flex gap-3 overflow-x-auto pb-3 sm:gap-4">
+            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
+              <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#0248D7] to-[#0B1020]"><Globe2 className="text-white" size={55} strokeWidth={1.4}/></div>
+              <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Sites web</div>
+            </Link>
+            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
+              <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#D99408] to-[#0B1020]"><Palette className="text-white" size={55} strokeWidth={1.4}/></div>
+              <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Design créatif</div>
+            </Link>
+          </div>
+          <p className="mt-20 select-none text-[clamp(3.1rem,12vw,8rem)] font-black leading-[0.95] tracking-[-0.07em] text-[#B9B9B9] sm:mt-28">Avec passion,<span className="block">par UQONI.</span></p>
+        </section>
         <footer className="py-10 text-center text-sm text-slate-500">UQONI ONE · Growth Infrastructure</footer>
       </div>
       <nav aria-label="Navigation mobile" className="fixed inset-x-0 bottom-0 z-30 grid w-full grid-cols-5 items-center gap-0 border-t border-slate-200 bg-white/95 px-1 pt-2 pb-[calc(env(safe-area-inset-bottom)+8px)] shadow-[0_-6px_24px_rgba(11,16,32,0.08)] backdrop-blur-lg sm:hidden">
