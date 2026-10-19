@@ -47,3 +47,18 @@ test("Supabase server client uses a public key rather than a service-role key", 
   assert.match(source, /NEXT_PUBLIC_SUPABASE_ANON_KEY/);
   assert.doesNotMatch(source, /SUPABASE_SERVICE_ROLE_KEY|service_role/);
 });
+
+test("administrator gate retains original admin route as default", () => {
+  const session = read("src/lib/session.ts");
+  assert.match(session, /export async function requireAdmin\(path = "\/admin"\)/);
+  assert.match(session, /await requireUser\(path\)/);
+  assert.match(session, /if \(s\.profile\?\.role !== "admin"\) redirect\("\/home"\)/);
+});
+
+test("server Supabase client uses user-scoped publishable or anon credentials", () => {
+  const source = read("src/lib/supabase/server.ts");
+  assert.match(source, /createServerClient<Database>/);
+  assert.match(source, /NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY/);
+  assert.match(source, /NEXT_PUBLIC_SUPABASE_ANON_KEY/);
+  assert.doesNotMatch(source, /SUPABASE_SERVICE_ROLE_KEY|service_role/);
+});
