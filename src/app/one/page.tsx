@@ -62,7 +62,7 @@ export default function OneLauncher() {
             {[{label:"Agence",icon:BriefcaseBusiness},{label:"Academy",icon:GraduationCap},{label:"Creative",icon:Palette},{label:"UQONI AI",icon:Sparkles}].map(({label,icon:Icon})=><div key={label} className="flex min-w-0 flex-col items-center gap-2 text-center"><span className="flex aspect-square w-full max-w-16 items-center justify-center rounded-full border-2 border-[#0248D7] bg-[#EEF3FF] text-[#0248D7] sm:max-w-20"><Icon size={25}/></span><span className="text-[10px] font-semibold leading-tight sm:text-sm">{label}</span></div>)}
           </div>
         </section>
-        <section aria-labelledby="discover-heading" className="mt-12 scroll-mt-24">
+        <section id="decouvrir" aria-labelledby="discover-heading" className="mt-12 scroll-mt-24">
           <div className="flex items-start justify-between gap-3"><div><h2 id="discover-heading" className="text-2xl font-black sm:text-3xl">Explorer UQONI</h2><p className="mt-1 text-sm text-slate-600">Découvrez nos solutions et savoir-faire</p></div><Link href="/services" className="shrink-0 pt-1 text-sm font-bold text-[#0248D7]">Tout voir</Link></div>
           <Link href="/services" className="group relative mt-5 block max-w-lg overflow-hidden rounded-[26px] bg-gradient-to-br from-[#123D9C] via-[#0248D7] to-[#0B1020] p-5 text-white shadow-sm">
             <div aria-hidden="true" className="grid grid-cols-2 gap-3 pb-20 sm:gap-4">
@@ -71,8 +71,8 @@ export default function OneLauncher() {
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B1020] via-[#0B1020]/90 to-transparent px-5 pb-5 pt-12"><h3 className="text-xl font-extrabold">Création, innovation et IA</h3><p className="mt-1 text-sm text-white/85">Explorez les possibilités pour votre activité <ArrowRight size={15} className="inline"/></p></div>
           </Link>
         </section>
-        <section aria-labelledby="finance-heading" className="mt-10 scroll-mt-24">
-          <div className="flex items-end justify-between gap-3"><div><h2 id="finance-heading" className="text-2xl font-black sm:text-3xl">Finance</h2><p className="mt-1 text-sm text-slate-600">Des solutions pour accompagner votre activité</p></div><a href="#explorer" className="shrink-0 text-sm font-bold text-[#0248D7]">Tout voir</a></div>
+        <section id="finance" aria-labelledby="finance-heading" className="mt-10 scroll-mt-24">
+          <div className="flex items-end justify-between gap-3"><div><h2 id="finance-heading" className="text-2xl font-black sm:text-3xl">Finance</h2><p className="mt-1 text-sm text-slate-600">Des solutions pour accompagner votre activité</p></div><a href="#explorer" className="shrink-0 text-sm font-bold text-[#0248D7]" aria-label="Voir toutes les solutions UQONI">Tout voir</a></div>
           <div className="mt-4 flex snap-x gap-3 overflow-x-auto pb-3">
             <article className="flex min-h-44 w-[78%] max-w-sm shrink-0 snap-start flex-col justify-between rounded-3xl bg-[#0B1020] p-5 text-white"><Wallet size={35} className="text-[#8ADAF5]"/><div><h3 className="text-xl font-extrabold">Finance UQONI</h3><p className="mt-1 text-sm text-slate-300">Un espace dédié aux opérations financières</p><span className="mt-3 inline-block text-xs text-slate-300">En préparation</span></div></article>
             <article className="flex min-h-44 w-[78%] max-w-sm shrink-0 snap-start flex-col justify-between rounded-3xl bg-[#E9EDF9] p-5 text-[#0B1020]"><LayoutDashboard size={35} className="text-[#0248D7]"/><div><h3 className="text-xl font-extrabold">Suivi des projets</h3><p className="mt-1 text-sm text-slate-600">Retrouvez vos commandes et livrables</p><Link href="/client" className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-[#0248D7]">Mon espace <ArrowRight size={15}/></Link></div></article>
