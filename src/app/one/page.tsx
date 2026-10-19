@@ -82,12 +82,6 @@ export default function OneLauncher() {
             <Link href="/client" className="mt-7 inline-flex items-center gap-2 font-bold text-[#0248D7]">Accéder à mon espace <ArrowRight size={17}/></Link>
           </article>
         </section>
-        <section className="mt-12">
-          <div className="mb-5 flex items-end justify-between"><div><h2 className="text-2xl font-black">À découvrir</h2><p className="text-sm text-slate-600">De nouvelles possibilités pour votre activité</p></div></div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[{name:"UQONI Academy",desc:"Formations et parcours professionnels",icon:GraduationCap},{name:"UQONI Creative",desc:"Design et production de contenus",icon:Palette},{name:"UQONI AI",desc:"Outils intelligents pour votre croissance",icon:Sparkles}].map(({name,desc,icon:Icon})=><article key={name} className="rounded-3xl border border-slate-200 p-6"><Icon className="text-[#0248D7]" size={29}/><h3 className="mt-5 font-bold">{name}</h3><p className="mt-2 text-sm text-slate-600">{desc}</p><span className="mt-4 inline-block text-xs font-semibold text-slate-500">Prochainement</span></article>)}
-          </div>
-        </section>
         <section className="mt-12 rounded-3xl bg-slate-100 p-7"><div className="flex items-start gap-4"><ShieldCheck className="shrink-0 text-[#0248D7]" size={30}/><div><h2 className="text-lg font-bold">Vos données, vos accès</h2><p className="mt-2 text-sm text-slate-600">Les espaces privés nécessitent une connexion. Les modules en préparation ne donnent pas accès aux données internes.</p><Link href="/workspace" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#0248D7]">Espace équipe (accès autorisé uniquement) <ArrowRight size={15}/></Link></div></div></section>
         <footer className="py-10 text-center text-sm text-slate-500">UQONI ONE · Growth Infrastructure</footer>
       </div>
