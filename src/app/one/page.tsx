@@ -27,14 +27,14 @@ export default function OneLauncher() {
         </div>
       </header>
       <div className="mx-auto max-w-6xl px-5">
-        <section className="relative mt-6 overflow-hidden rounded-[28px] bg-gradient-to-br from-[#2563EB] via-[#0248D7] to-[#0B1020] px-7 py-11 text-white sm:px-12 sm:py-16">
+        <section className="relative isolate mt-6 overflow-hidden rounded-[28px] bg-gradient-to-br from-[#2563EB] via-[#0248D7] to-[#0B1020] px-7 py-11 text-white sm:px-12 sm:py-16">
           <div className="relative z-10 max-w-xl">
             <span className="rounded-full border border-white/30 px-3 py-1 text-xs font-semibold">Bienvenue dans UQONI ONE</span>
             <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight sm:text-6xl">Tous vos services. <span className="text-[#8ADAF5]">Un seul espace.</span></h1>
             <p className="mt-5 max-w-md text-base text-blue-100">Création digitale, projets, formations et solutions intelligentes. Découvrez l’écosystème UQONI depuis un seul endroit.</p>
             <Link href="/services" className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-[#0248D7]">Découvrir les services <ArrowRight size={18}/></Link>
           </div>
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 rounded-full border-[48px] border-white/10 sm:h-96 sm:w-96"/><div aria-hidden="true" className="pointer-events-none absolute bottom-5 right-5 hidden rotate-[-12deg] rounded-[26px] border border-white/40 bg-white/15 p-8 shadow-2xl backdrop-blur sm:block"><Smartphone size={92} strokeWidth={1.1}/></div>
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 rounded-full border-[48px] border-white/10 sm:h-96 sm:w-96"/><div aria-hidden="true" className="pointer-events-none absolute right-[-45px] top-[-45px] h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl"/><div aria-hidden="true" className="pointer-events-none absolute bottom-[-90px] left-[-70px] h-56 w-56 rounded-full bg-white/10 blur-3xl"/><div aria-hidden="true" className="pointer-events-none absolute bottom-5 right-5 hidden rotate-[-12deg] rounded-[26px] border border-white/40 bg-white/15 p-8 shadow-2xl backdrop-blur sm:block"><Smartphone size={92} strokeWidth={1.1}/></div>
         </section>
         <section id="applications" aria-labelledby="apps-heading" className="mt-8 scroll-mt-24 rounded-[30px] bg-[#E9EDF9] p-5 sm:p-8">
           <div className="mb-5 flex items-center justify-between"><h2 id="apps-heading" className="text-xl font-extrabold">Vos espaces UQONI</h2><Grid2X2 size={20} className="text-[#0248D7]"/></div>
