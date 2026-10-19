@@ -7,7 +7,12 @@ on:
       - "src/app/one/**"
       - "src/lib/session.ts"
       - "src/lib/format.ts"
+      - "src/lib/supabase/**"
+      - "src/lib/database.types.ts"
+      - "src/app/(auth)/login/**"
+      - "src/components/auth-form.tsx"
       - "tests/uqoni-one-security.test.mjs"
+      - "docs/qa/UQONI-ONE-G3-READONLY-RLS-AUDIT.sql"
       - ".github/workflows/uqoni-one-security.yml"
   workflow_dispatch:
 
