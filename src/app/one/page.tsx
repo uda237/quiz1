@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, House, ChevronRight, Bell, Smartphone, Globe2, HeartPulse, Sprout } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, House, ChevronRight, Bell, Smartphone, Globe2, HeartPulse, Sprout, MessageCircle } from "lucide-react";
 
 const primary = [
   { name: "Agence", detail: "Sites web, design et marketing", href: "/services", icon: BriefcaseBusiness },
@@ -82,11 +82,12 @@ export default function OneLauncher() {
         <section className="mt-12 rounded-3xl bg-slate-100 p-7"><div className="flex items-start gap-4"><ShieldCheck className="shrink-0 text-[#0248D7]" size={30}/><div><h2 className="text-lg font-bold">Vos données, vos accès</h2><p className="mt-2 text-sm text-slate-600">Les espaces privés nécessitent une connexion. Les modules en préparation ne donnent pas accès aux données internes.</p><Link href="/workspace" className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#0248D7]">Espace équipe (accès autorisé uniquement) <ArrowRight size={15}/></Link></div></div></section>
         <footer className="py-10 text-center text-sm text-slate-500">UQONI ONE · Growth Infrastructure</footer>
       </div>
-      <nav aria-label="Navigation mobile" className="fixed inset-x-0 bottom-0 z-30 grid w-full grid-cols-4 items-stretch border-t border-slate-200 bg-white/95 px-2 pt-2 pb-[calc(env(safe-area-inset-bottom)+8px)] shadow-[0_-6px_24px_rgba(11,16,32,0.08)] backdrop-blur-lg sm:hidden">
-        <Link href="/one" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-[#0248D7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><House size={22}/><span className="text-[11px] font-semibold">Accueil</span></Link>
-        <Link href="/services" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><BriefcaseBusiness size={22}/><span className="text-[11px]">Services</span></Link>
-        <Link href="/client" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><LayoutDashboard size={22}/><span className="text-[11px]">Mon espace</span></Link>
-        <Link href="/login" className="flex min-w-0 min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Users size={22}/><span className="text-[11px]">Compte</span></Link>
+      <nav aria-label="Navigation mobile" className="fixed inset-x-0 bottom-0 z-30 grid w-full grid-cols-5 items-center gap-0 border-t border-slate-200 bg-white/95 px-1 pt-2 pb-[calc(env(safe-area-inset-bottom)+8px)] shadow-[0_-6px_24px_rgba(11,16,32,0.08)] backdrop-blur-lg sm:hidden">
+        <Link href="/one" aria-current="page" className="flex min-h-16 min-w-0 flex-col items-center justify-center gap-1 rounded-xl text-[#0248D7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0248D7] text-white"><House size={20}/></span><span className="text-[10px] font-bold">Accueil</span></Link>
+        <Link href="/services" className="flex min-h-16 min-w-0 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><BriefcaseBusiness size={22}/><span className="text-[10px]">Services</span></Link>
+        <Link href="/client" className="flex min-h-16 min-w-0 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><LayoutDashboard size={22}/><span className="text-[10px]">Projets</span></Link>
+        <Link href="/client" className="flex min-h-16 min-w-0 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><MessageCircle size={22}/><span className="text-[10px]">Messages</span></Link>
+        <Link href="/login" className="flex min-h-16 min-w-0 flex-col items-center justify-center gap-1 rounded-xl text-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Users size={22}/><span className="text-[10px]">Compte</span></Link>
       </nav>
     </main>
   );
