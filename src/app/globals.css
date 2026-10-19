@@ -1252,3 +1252,28 @@ strong {
     grid-template-columns: 1fr;
   }
 }
+
+/* UQONI ONE — subtle animated campaign header, with accessible motion fallback */
+.uqoni-hero-copy {
+  background: linear-gradient(115deg, #1142c6 0%, #0248d7 42%, #15358b 75%, #1142c6 100%);
+  background-size: 240% 240%;
+  animation: uqoni-campaign-shift 13s ease-in-out infinite alternate;
+}
+.uqoni-hero-art img {
+  transform-origin: 50% 65%;
+  animation: uqoni-campaign-float 7s ease-in-out infinite;
+}
+@keyframes uqoni-campaign-shift {
+  from { background-position: 0% 45%; }
+  to { background-position: 100% 55%; }
+}
+@keyframes uqoni-campaign-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.012); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .uqoni-hero-copy,
+  .uqoni-hero-art img {
+    animation: none;
+  }
+}
