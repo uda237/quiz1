@@ -46,10 +46,21 @@ export default function OneLauncher() {
           </div>
         </section>
         <section id="nouveautes" aria-labelledby="news-heading" className="mt-10 scroll-mt-24">
-          <div className="mb-5 flex items-center justify-between"><div><h2 id="news-heading" className="text-2xl font-black">Nouveautés</h2><p className="text-sm text-slate-600">Explorez l’univers UQONI</p></div><span className="text-sm font-semibold text-[#0248D7]">UQONI ONE</span></div>
-          <div className="grid grid-cols-4 gap-2 rounded-[28px] border border-slate-200 px-3 py-6 sm:gap-3 sm:px-8">
-            {[{label:"Agence",icon:BriefcaseBusiness},{label:"Academy",icon:GraduationCap},{label:"Creative",icon:Palette},{label:"UQONI AI",icon:Sparkles}].map(({label,icon:Icon},i)=><div key={label} className="flex min-w-0 flex-col items-center text-center"><div className={`flex h-14 w-14 items-center justify-center rounded-full border-[3px] border-white shadow-[0_0_0_2px_#0248D7] sm:h-20 sm:w-20 ${i===1?"bg-[#0B1020]":i===2?"bg-[#D99408]":"bg-[#0248D7]"}`}><Icon size={27} className="text-white"/></div><span className="mt-3 break-words text-[11px] font-semibold leading-tight sm:text-sm">{label}</span></div>)}
+          <div className="mb-5">
+            <h2 id="news-heading" className="text-3xl font-black tracking-tight text-[#101010] sm:text-4xl">À découvrir</h2>
+            <p className="mt-1 text-sm text-slate-500 sm:text-base">Des expériences sélectionnées pour vous</p>
           </div>
+          <div className="flex gap-3 overflow-x-auto pb-3 sm:gap-4">
+            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
+              <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#0248D7] to-[#0B1020]"><Globe2 className="text-white" size={55} strokeWidth={1.4}/></div>
+              <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Sites web</div>
+            </Link>
+            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
+              <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#D99408] to-[#0B1020]"><Palette className="text-white" size={55} strokeWidth={1.4}/></div>
+              <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Design créatif</div>
+            </Link>
+          </div>
+          <p className="mt-20 select-none text-[clamp(3.1rem,12vw,8rem)] font-black leading-[0.95] tracking-[-0.07em] text-[#B9B9B9] sm:mt-28">Avec passion,<span className="block">par UQONI.</span></p>
         </section>
         <section className="mt-12">
           <div className="mb-5 flex items-end justify-between"><div><h2 className="text-2xl font-black">Solutions digitales</h2><p className="text-sm text-slate-600">Vos idées, nos expertises</p></div><a href="#explorer" className="text-sm font-bold text-[#0248D7]">Tout voir</a></div>
