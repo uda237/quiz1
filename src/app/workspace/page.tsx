@@ -5,7 +5,7 @@ import { requireAdmin } from "@/lib/session";
  * This does not grant access to any additional data or roles.
  */
 export default async function WorkspacePage() {
-  await requireAdmin();
+  await requireAdmin("/workspace");
   const modules = [
     { name: "Administration", href: "/admin", description: "Tableau de bord existant" },
     { name: "Demandes et paiements", href: "/admin/orders", description: "Vérification et suivi" },
