@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, House, ChevronRight } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, House, ChevronRight, Bell, ScanLine, Smartphone, MonitorSmartphone, Globe2, Video, CreditCard } from "lucide-react";
 
 const primary = [
   { name: "Agence", detail: "Sites web, design et marketing", href: "/services", icon: BriefcaseBusiness },
@@ -22,7 +22,7 @@ export default function OneLauncher() {
           <nav aria-label="Actions rapides" className="flex items-center gap-4 text-[#0B1020]">
             <a href="#applications" aria-label="Voir les applications" className="rounded-lg p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Grid2X2 size={21}/></a>
             <a href="#explorer" aria-label="Explorer les services" className="rounded-lg p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Search size={21}/></a>
-            <Link href="/login" aria-label="Connexion au compte"><Users size={22}/></Link>
+            <a href="#nouveautes" aria-label="Voir les nouveautés"><Bell size={21}/></a><Link href="/login" aria-label="Connexion au compte" className="rounded-full bg-[#E9EDF9] p-2 text-[#0248D7]"><Users size={21}/></Link>
           </nav>
         </div>
       </header>
@@ -34,7 +34,7 @@ export default function OneLauncher() {
             <p className="mt-5 max-w-md text-base text-blue-100">Création digitale, projets, formations et solutions intelligentes. Découvrez l’écosystème UQONI depuis un seul endroit.</p>
             <Link href="/services" className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-[#0248D7]">Découvrir les services <ArrowRight size={18}/></Link>
           </div>
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 rounded-full border-[48px] border-white/10 sm:h-96 sm:w-96"/>
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 rounded-full border-[48px] border-white/10 sm:h-96 sm:w-96"/><div aria-hidden="true" className="pointer-events-none absolute bottom-5 right-5 hidden rotate-[-12deg] rounded-[26px] border border-white/40 bg-white/15 p-8 shadow-2xl backdrop-blur sm:block"><Smartphone size={92} strokeWidth={1.1}/></div>
         </section>
         <section id="applications" aria-labelledby="apps-heading" className="mt-8 scroll-mt-24 rounded-[30px] bg-[#E9EDF9] p-5 sm:p-8">
           <div className="mb-5 flex items-center justify-between"><h2 id="apps-heading" className="text-xl font-extrabold">Vos espaces UQONI</h2><Grid2X2 size={20} className="text-[#0248D7]"/></div>
@@ -42,7 +42,19 @@ export default function OneLauncher() {
             {primary.map(({name,detail,href,icon:Icon})=><Link key={name} href={href} className="flex min-h-36 flex-col justify-between rounded-2xl bg-white p-5 shadow-sm transition hover:shadow-md"><Icon className="text-[#0248D7]" size={30}/><div><h3 className="mt-4 text-base font-bold">{name}</h3><p className="mt-1 text-xs text-slate-600">{detail}</p></div></Link>)}
           </div>
           <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-6">
-            {modules.map(({name,icon:Icon})=><div key={name} className="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-white p-3 text-center"><Icon className="mb-3 text-[#0248D7]" size={28}/><span className="text-xs font-bold">{name}</span><span className="mt-1 text-[10px] text-slate-500">Bientôt</span></div>)}
+            {modules.map(({name,icon:Icon})=><div key={name} className="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-white p-3 text-center shadow-sm"><Icon className="mb-3 text-[#0248D7]" size={28}/><span className="text-xs font-bold">{name}</span><span className="mt-1 text-[10px] text-slate-500">Bientôt</span></div>)}
+          </div>
+        </section>
+        <section id="nouveautes" aria-labelledby="news-heading" className="mt-10 scroll-mt-24">
+          <div className="mb-5 flex items-center justify-between"><div><h2 id="news-heading" className="text-2xl font-black">Nouveautés</h2><p className="text-sm text-slate-600">Explorez l’univers UQONI</p></div><span className="text-sm font-semibold text-[#0248D7]">UQONI ONE</span></div>
+          <div className="grid grid-cols-4 gap-3 rounded-[28px] border border-slate-200 px-3 py-6 sm:px-8">
+            {[{label:"Agence",icon:BriefcaseBusiness},{label:"Academy",icon:GraduationCap},{label:"Creative",icon:Palette},{label:"UQONI AI",icon:Sparkles}].map(({label,icon:Icon},i)=><div key={label} className="flex min-w-0 flex-col items-center text-center"><div className={`flex h-14 w-14 items-center justify-center rounded-full border-[3px] border-white shadow-[0_0_0_2px_#0248D7] sm:h-20 sm:w-20 ${i===1?"bg-[#0B1020]":i===2?"bg-[#D99408]":"bg-[#0248D7]"}`}><Icon size={27} className="text-white"/></div><span className="mt-3 text-[11px] font-semibold sm:text-sm">{label}</span></div>)}
+          </div>
+        </section>
+        <section className="mt-12">
+          <div className="mb-5 flex items-end justify-between"><div><h2 className="text-2xl font-black">Solutions digitales</h2><p className="text-sm text-slate-600">Vos idées, nos expertises</p></div><a href="#explorer" className="text-sm font-bold text-[#0248D7]">Tout voir</a></div>
+          <div className="flex snap-x gap-4 overflow-x-auto pb-3">
+            {[{name:"Sites web & applications",description:"Une présence digitale à votre image",icon:Globe2,color:"from-[#0248D7] to-[#0B1020]"},{name:"Design & identité",description:"Une marque qui vous ressemble",icon:Palette,color:"from-[#D99408] to-[#0B1020]"},{name:"Automatisation & IA",description:"Des processus plus intelligents",icon:Sparkles,color:"from-[#2563EB] to-[#0B1020]"}].map(({name,description,icon:Icon,color})=><Link key={name} href="/services" className={`relative flex min-h-72 min-w-[82%] snap-start flex-col justify-between overflow-hidden rounded-[28px] bg-gradient-to-br p-7 text-white sm:min-w-[40%] ${color}`}><Icon size={84} strokeWidth={1} className="absolute right-4 top-5 opacity-30"/><span className="text-sm font-semibold">UQONI Digital Agency</span><div><h3 className="text-2xl font-black">{name}</h3><p className="mt-2 text-sm text-white/80">{description}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-bold">Découvrir <ArrowRight size={17}/></span></div></Link>)}
           </div>
         </section>
         <section id="explorer" className="mt-10 scroll-mt-24 grid gap-5 sm:grid-cols-2">
