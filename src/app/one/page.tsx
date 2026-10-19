@@ -13,7 +13,7 @@ const modules = [
   { name: "Finance", icon: Wallet },
   { name: "Wi-Fi Zone", icon: Wifi },
   { name: "UQONI Health", icon: HeartPulse },
-  { name: "UQONI Agriculture", icon: Sprout },
+  { name: "More", icon: Grid2X2 },
 ];
 export default function OneLauncher() {
   return (
