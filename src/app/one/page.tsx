@@ -39,10 +39,10 @@ export default function OneLauncher() {
         <section id="applications" aria-labelledby="apps-heading" className="mt-8 scroll-mt-24 rounded-[30px] bg-[#E9EDF9] p-5 sm:p-8">
           <div className="mb-5 flex items-center justify-between"><h2 id="apps-heading" className="text-xl font-extrabold">Vos espaces UQONI</h2><Grid2X2 size={20} className="text-[#0248D7]"/></div>
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            {primary.map(({name,detail,href,icon:Icon})=><Link key={name} href={href} className="flex min-h-36 flex-col justify-between rounded-2xl bg-white p-5 shadow-sm transition hover:shadow-md"><Icon className="text-[#0248D7]" size={30}/><div><h3 className="mt-4 text-base font-bold">{name}</h3><p className="mt-1 text-xs text-slate-600">{detail}</p></div></Link>)}
+            {primary.map(({name,detail,href,icon:Icon})=><Link key={name} href={href} className="flex min-h-36 flex-col justify-between rounded-2xl bg-white p-4 shadow-sm transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0248D7] sm:p-5"><Icon className="text-[#0248D7]" size={30}/><div><h3 className="mt-4 text-base font-bold">{name}</h3><p className="mt-1 text-xs text-slate-600">{detail}</p></div></Link>)}
           </div>
           <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-6">
-            {modules.map(({name,icon:Icon})=><div key={name} className="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-white p-3 text-center shadow-sm"><Icon className="mb-3 text-[#0248D7]" size={28}/><span className="text-xs font-bold">{name}</span><span className="mt-1 text-[10px] text-slate-500">Bientôt</span></div>)}
+            {modules.map(({name,icon:Icon})=><div key={name} className="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-white p-2 text-center shadow-sm sm:p-3"><Icon className="mb-3 text-[#0248D7]" size={28}/><span className="text-xs font-bold">{name}</span><span className="mt-1 text-[10px] text-slate-500">Bientôt</span></div>)}
           </div>
         </section>
         <section id="nouveautes" aria-labelledby="news-heading" className="mt-10 scroll-mt-24">
