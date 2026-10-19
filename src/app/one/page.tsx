@@ -1,17 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, Bell, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, Menu, ChevronRight } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, House, ChevronRight } from "lucide-react";
 
 const primary = [
-  { name: "Agence", detail: "Sites web, design et marketing", href: "/services", icon: BriefcaseBusiness, enabled: true, tone: "blue" },
-  { name: "Espace client", detail: "Commandes et livrables", href: "/client", icon: LayoutDashboard, enabled: true, tone: "blue" },
+  { name: "Agence", detail: "Sites web, design et marketing", href: "/services", icon: BriefcaseBusiness },
+  { name: "Espace client", detail: "Commandes et livrables", href: "/client", icon: LayoutDashboard },
 ];
 const modules = [
-  { name: "Academy", icon: GraduationCap, detail: "Apprendre et progresser", href: "#", enabled: false },
-  { name: "Creative", icon: Palette, detail: "Studio de création", href: "#", enabled: false },
-  { name: "Shop", icon: ShoppingBag, detail: "Boutique digitale", href: "#", enabled: false },
-  { name: "UQONI AI", icon: Sparkles, detail: "Assistant intelligent", href: "#", enabled: false },
-  { name: "Finance", icon: Wallet, detail: "Pilotage financier", href: "#", enabled: false },
-  { name: "Wi-Fi Zone", icon: Wifi, detail: "Connectivité", href: "#", enabled: false },
+  { name: "Academy", icon: GraduationCap },
+  { name: "Creative", icon: Palette },
+  { name: "Shop", icon: ShoppingBag },
+  { name: "UQONI AI", icon: Sparkles },
+  { name: "Finance", icon: Wallet },
+  { name: "Wi-Fi Zone", icon: Wifi },
 ];
 export default function OneLauncher() {
   return (
@@ -42,7 +42,7 @@ export default function OneLauncher() {
             {primary.map(({name,detail,href,icon:Icon})=><Link key={name} href={href} className="flex min-h-36 flex-col justify-between rounded-2xl bg-white p-5 shadow-sm transition hover:shadow-md"><Icon className="text-[#0248D7]" size={30}/><div><h3 className="mt-4 text-base font-bold">{name}</h3><p className="mt-1 text-xs text-slate-600">{detail}</p></div></Link>)}
           </div>
           <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-6">
-            {modules.map(({name,icon:Icon,enabled})=><div key={name} className="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-white p-3 text-center"><Icon className="mb-3 text-[#0248D7]" size={28}/><span className="text-xs font-bold">{name}</span>{!enabled&&<span className="mt-1 text-[10px] text-slate-500">Bientôt</span>}</div>)}
+            {modules.map(({name,icon:Icon})=><div key={name} className="flex min-h-28 flex-col items-center justify-center rounded-2xl bg-white p-3 text-center"><Icon className="mb-3 text-[#0248D7]" size={28}/><span className="text-xs font-bold">{name}</span><span className="mt-1 text-[10px] text-slate-500">Bientôt</span></div>)}
           </div>
         </section>
         <section id="explorer" className="mt-10 grid gap-5 sm:grid-cols-2">
@@ -69,7 +69,7 @@ export default function OneLauncher() {
         <footer className="py-10 text-center text-sm text-slate-500">UQONI ONE · Growth Infrastructure</footer>
       </div>
       <nav aria-label="Navigation mobile" className="fixed bottom-0 left-0 right-0 z-30 flex justify-around border-t border-slate-200 bg-white px-3 py-3 shadow-lg sm:hidden">
-        <Link href="/one" className="flex flex-col items-center gap-1 text-[#0248D7]"><Menu size={22}/><span className="text-[11px] font-semibold">Accueil</span></Link>
+        <Link href="/one" className="flex flex-col items-center gap-1 text-[#0248D7]"><House size={22}/><span className="text-[11px] font-semibold">Accueil</span></Link>
         <Link href="/services" className="flex flex-col items-center gap-1 text-slate-600"><BriefcaseBusiness size={22}/><span className="text-[11px]">Services</span></Link>
         <Link href="/client" className="flex flex-col items-center gap-1 text-slate-600"><LayoutDashboard size={22}/><span className="text-[11px]">Mon espace</span></Link>
         <Link href="/login" className="flex flex-col items-center gap-1 text-slate-600"><Users size={22}/><span className="text-[11px]">Compte</span></Link>
