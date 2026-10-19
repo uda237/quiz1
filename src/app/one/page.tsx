@@ -18,8 +18,8 @@ const modules = [
 ];
 export default function OneLauncher() {
   return (
-    <main className="min-h-screen min-w-0 overflow-x-clip scroll-smooth bg-white pb-28 text-[#0B1020]">
-      <header className="sticky top-0 z-20 border-b border-slate-100 bg-white/95 backdrop-blur">
+    <main className="min-h-screen min-w-0 scroll-smooth bg-white pb-28 text-[#0B1020]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur" aria-label="En-tête UQONI ONE">
         <div className="mx-auto flex max-w-6xl min-w-0 items-center justify-between gap-2 px-4 py-3 sm:px-5 sm:py-4">
           <Link href="/one" className="shrink-0 text-xl font-black tracking-[-.06em] text-[#0248D7] sm:text-2xl" aria-label="UQONI ONE, accueil">UQONI<span className="ml-1 rounded-full bg-[#0248D7] px-2 py-1 text-xs tracking-normal text-white">ONE</span></Link>
           <nav aria-label="Actions rapides" className="flex shrink-0 items-center gap-2 text-[#0B1020] sm:gap-4">
@@ -29,7 +29,7 @@ export default function OneLauncher() {
           </nav>
         </div>
       </header>
-      <div className="mx-auto max-w-6xl min-w-0 px-4 sm:px-5">
+      <div className="mx-auto max-w-6xl min-w-0 px-4 pt-[64px] sm:px-5 sm:pt-[76px]">
         <section aria-labelledby="hero-heading" className="mt-4 overflow-hidden rounded-[26px] bg-[#1142C6] text-white shadow-sm sm:mt-6 sm:rounded-[30px]">
           <div className="relative px-5 pb-7 pt-6 sm:px-10 sm:pb-10 sm:pt-9">
             <div className="flex items-start justify-between gap-3"><span className="text-sm font-semibold text-blue-100">Bienvenue dans UQONI ONE</span><Link href="/services" aria-label="Découvrir les services UQONI" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0248D7]"><ChevronRight size={23}/></Link></div>
