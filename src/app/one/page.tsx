@@ -29,14 +29,22 @@ export default function OneLauncher() {
         </div>
       </header>
       <div className="mx-auto max-w-6xl min-w-0 px-4 sm:px-5">
-        <section className="relative isolate mt-4 overflow-hidden rounded-[24px] bg-gradient-to-br from-[#2563EB] via-[#0248D7] to-[#0B1020] px-5 py-6 text-white sm:mt-6 sm:rounded-[28px] sm:px-12 sm:py-16">
-          <div className="relative z-10 max-w-xl">
-            <span className="rounded-full border border-white/30 px-3 py-1 text-xs font-semibold">Bienvenue dans UQONI ONE</span>
-            <h1 className="mt-4 text-[clamp(1.75rem,7vw,3rem)] font-black leading-[1.12] tracking-tight sm:mt-6 sm:text-6xl">Tous vos services. <span className="text-[#8ADAF5]">Un seul espace.</span></h1>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-blue-100 sm:mt-5 sm:text-base">Création digitale, projets, formations et solutions intelligentes. Découvrez l’écosystème UQONI depuis un seul endroit.</p>
-            <Link href="/services" className="mt-4 inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-center text-sm font-bold text-[#0248D7] sm:mt-7 sm:px-6">Découvrir les services <ArrowRight size={18}/></Link>
+        <section aria-labelledby="hero-heading" className="mt-4 overflow-hidden rounded-[26px] bg-[#1142C6] text-white shadow-sm sm:mt-6 sm:rounded-[30px]">
+          <div className="relative px-5 pb-7 pt-6 sm:px-10 sm:pb-10 sm:pt-9">
+            <div className="flex items-start justify-between gap-3"><span className="text-sm font-semibold text-blue-100">Bienvenue dans UQONI ONE</span><Link href="/services" aria-label="Découvrir les services UQONI" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0248D7]"><ChevronRight size={23}/></Link></div>
+            <h1 id="hero-heading" className="mt-4 max-w-lg text-[clamp(2rem,8vw,3.8rem)] font-black leading-[1.08] tracking-tight">Vos projets digitaux, plus loin avec UQONI.</h1>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
           </div>
-          <div aria-hidden="true" className="pointer-events-none absolute bottom-5 right-4 hidden h-40 w-28 rotate-[-10deg] rounded-[24px] border-[5px] border-white/70 bg-[#0B1020] p-2 shadow-2xl min-[420px]:block sm:right-10 sm:h-56 sm:w-40"><div className="flex h-full flex-col justify-between rounded-[14px] bg-gradient-to-b from-[#2563EB] to-[#0B1020] p-2"><span className="text-[9px] font-black tracking-wide text-white">UQONI ONE</span><div className="grid grid-cols-2 gap-1">{[BriefcaseBusiness,GraduationCap,Palette,Sparkles].map((Icon,i)=><span key={i} className="flex aspect-square items-center justify-center rounded-lg bg-white/15"><Icon size={18}/></span>)}</div><span className="text-[8px] font-semibold text-blue-100">Growth Infrastructure</span></div></div><div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 rounded-full border-[48px] border-white/10 sm:h-96 sm:w-96"/><div aria-hidden="true" className="pointer-events-none absolute right-[-45px] top-[-45px] h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl"/><div aria-hidden="true" className="pointer-events-none absolute bottom-[-90px] left-[-70px] h-56 w-56 rounded-full bg-white/10 blur-3xl"/><div aria-hidden="true" className="pointer-events-none absolute bottom-5 right-5 hidden rotate-[-12deg] rounded-[26px] border border-white/40 bg-white/15 p-8 shadow-2xl backdrop-blur sm:block"><Smartphone size={92} strokeWidth={1.1}/></div>
+          <div aria-label="Illustration de l'écosystème UQONI" className="relative flex min-h-56 items-end justify-center overflow-hidden bg-gradient-to-b from-[#86CBF5] via-[#C0E8FF] to-[#8CC6F0] px-4 pb-5 pt-7 sm:min-h-80">
+            <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#5BA4DC]/50 to-transparent"/>
+            <div aria-hidden="true" className="absolute left-[-35px] top-8 h-32 w-32 rounded-full bg-white/20 blur-2xl"/>
+            <div aria-hidden="true" className="absolute right-[-25px] bottom-5 h-44 w-44 rounded-full bg-[#2563EB]/20 blur-2xl"/>
+            <div className="relative z-10 flex w-full max-w-md items-end justify-center gap-3 sm:gap-6">
+              <div className="mb-3 flex w-[27%] max-w-32 flex-col items-center rounded-2xl border border-white/60 bg-white/80 p-3 shadow-xl backdrop-blur-sm"><Globe2 size={35} className="text-[#0248D7]"/><span className="mt-2 text-center text-[10px] font-bold text-[#0B1020] sm:text-xs">Sites web</span></div>
+              <div className="flex w-[40%] max-w-48 rotate-[-4deg] flex-col rounded-[25px] border-[5px] border-[#0B1020] bg-[#0B1020] p-1 shadow-2xl"><div className="rounded-[18px] bg-white px-2 py-4"><span className="block text-center text-[10px] font-black text-[#0248D7] sm:text-sm">UQONI ONE</span><div className="mt-3 grid grid-cols-2 gap-2">{[BriefcaseBusiness,GraduationCap,Palette,Sparkles].map((Icon,i)=><span key={i} className="flex aspect-square items-center justify-center rounded-xl bg-[#E9EDF9] text-[#0248D7]"><Icon size={22}/></span>)}</div><div className="mt-3 h-2 rounded-full bg-[#E9EDF9]"/></div></div>
+              <div className="mb-5 flex w-[27%] max-w-32 flex-col items-center rounded-2xl border border-white/60 bg-white/80 p-3 shadow-xl backdrop-blur-sm"><Sparkles size={35} className="text-[#0248D7]"/><span className="mt-2 text-center text-[10px] font-bold text-[#0B1020] sm:text-xs">IA & design</span></div>
+            </div>
+          </div>
         </section>
         <section aria-label="Accès rapide UQONI" className="mt-4">
           <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#087EA8] px-4 py-4 text-white sm:px-6">
