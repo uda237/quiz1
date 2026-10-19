@@ -3,7 +3,8 @@ import { ArrowUpRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palett
 
 const apps = [
   { name: "Digital Agency", description: "Services, devis et projets", href: "/services", icon: BriefcaseBusiness, enabled: true },
-  { name: "Espace client", description: "Commandes et livrables", href: "/projects", icon: LayoutDashboard, enabled: true },
+  { name: "Espace client", description: "Commandes et livrables", href: "/client", icon: LayoutDashboard, enabled: true },
+  { name: "Espace équipe", description: "Opérations et administration — accès restreint", href: "/workspace", icon: LayoutDashboard, enabled: true },
   { name: "Academy", description: "Formations UQONI", href: "#", icon: GraduationCap, enabled: false },
   { name: "Creative", description: "Studio de création", href: "#", icon: Palette, enabled: false },
   { name: "Shop", description: "Produits et ressources", href: "#", icon: ShoppingBag, enabled: false },
@@ -19,7 +20,7 @@ export default function OneLauncher() {
       </header>
       <p className="mb-3 text-xs font-bold uppercase tracking-[.2em] text-blue-700">Un seul écosystème</p>
       <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">Vos applications UQONI, au même endroit.</h1>
-      <p className="mt-4 max-w-2xl text-slate-600">Découvrez les services disponibles. Les autres modules seront activés après validation de leur sécurité et de leur fonctionnement.</p>
+      <p className="mt-4 max-w-2xl text-slate-600">Découvrez les services disponibles. Les espaces client et équipe disposent de contrôles d’accès distincts. Les autres modules seront activés après validation de leur sécurité et de leur fonctionnement.</p>
       <section aria-label="Catalogue des applications" className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {apps.map(({ name, description, href, icon: Icon, enabled }) => (
           <article key={name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
