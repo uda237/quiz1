@@ -29,12 +29,12 @@ export default function OneLauncher() {
         </div>
       </header>
       <div className="mx-auto max-w-6xl min-w-0 px-4 sm:px-5">
-        <section className="relative isolate mt-4 overflow-hidden rounded-[24px] bg-gradient-to-br from-[#2563EB] via-[#0248D7] to-[#0B1020] px-5 py-8 text-white sm:mt-6 sm:rounded-[28px] sm:px-12 sm:py-16">
+        <section className="relative isolate mt-4 overflow-hidden rounded-[24px] bg-gradient-to-br from-[#2563EB] via-[#0248D7] to-[#0B1020] px-5 py-6 text-white sm:mt-6 sm:rounded-[28px] sm:px-12 sm:py-16">
           <div className="relative z-10 max-w-xl">
             <span className="rounded-full border border-white/30 px-3 py-1 text-xs font-semibold">Bienvenue dans UQONI ONE</span>
-            <h1 className="mt-5 text-[clamp(1.85rem,8vw,3rem)] font-black leading-[1.12] tracking-tight sm:mt-6 sm:text-6xl">Tous vos services. <span className="text-[#8ADAF5]">Un seul espace.</span></h1>
-            <p className="mt-5 max-w-md text-base text-blue-100">Création digitale, projets, formations et solutions intelligentes. Découvrez l’écosystème UQONI depuis un seul endroit.</p>
-            <Link href="/services" className="mt-6 inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-center text-sm font-bold text-[#0248D7] sm:mt-7 sm:px-6">Découvrir les services <ArrowRight size={18}/></Link>
+            <h1 className="mt-4 text-[clamp(1.75rem,7vw,3rem)] font-black leading-[1.12] tracking-tight sm:mt-6 sm:text-6xl">Tous vos services. <span className="text-[#8ADAF5]">Un seul espace.</span></h1>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-blue-100 sm:mt-5 sm:text-base">Création digitale, projets, formations et solutions intelligentes. Découvrez l’écosystème UQONI depuis un seul endroit.</p>
+            <Link href="/services" className="mt-4 inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-center text-sm font-bold text-[#0248D7] sm:mt-7 sm:px-6">Découvrir les services <ArrowRight size={18}/></Link>
           </div>
           <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 rounded-full border-[48px] border-white/10 sm:h-96 sm:w-96"/><div aria-hidden="true" className="pointer-events-none absolute right-[-45px] top-[-45px] h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl"/><div aria-hidden="true" className="pointer-events-none absolute bottom-[-90px] left-[-70px] h-56 w-56 rounded-full bg-white/10 blur-3xl"/><div aria-hidden="true" className="pointer-events-none absolute bottom-5 right-5 hidden rotate-[-12deg] rounded-[26px] border border-white/40 bg-white/15 p-8 shadow-2xl backdrop-blur sm:block"><Smartphone size={92} strokeWidth={1.1}/></div>
         </section>
@@ -72,16 +72,16 @@ export default function OneLauncher() {
             <p className="mt-1 text-sm text-slate-500 sm:text-base">Des expériences sélectionnées pour vous</p>
           </div>
           <div className="flex gap-3 overflow-x-auto pb-3 sm:gap-4">
-            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
+            <Link href="/services" className="group w-[118px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
               <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#0248D7] to-[#0B1020]"><Globe2 className="text-white" size={55} strokeWidth={1.4}/></div>
               <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Sites web</div>
             </Link>
-            <Link href="/services" className="group w-[126px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
+            <Link href="/services" className="group w-[118px] shrink-0 overflow-hidden rounded-[24px] bg-[#F3F4F6] shadow-sm transition hover:shadow-md sm:w-[160px]">
               <div className="flex aspect-[1.4] items-center justify-center bg-gradient-to-br from-[#D99408] to-[#0B1020]"><Palette className="text-white" size={55} strokeWidth={1.4}/></div>
               <div className="flex min-h-14 items-center justify-center px-2 py-2 text-center text-sm font-bold leading-tight text-[#111111] sm:text-base">Design créatif</div>
             </Link>
           </div>
-          <p className="mt-20 select-none text-[clamp(3.1rem,12vw,8rem)] font-black leading-[0.95] tracking-[-0.07em] text-[#B9B9B9] sm:mt-28">Avec passion,<span className="block">par UQONI.</span></p>
+          <p className="mt-16 select-none text-[clamp(2.75rem,10vw,7rem)] font-black leading-[0.95] tracking-[-0.07em] text-[#B9B9B9] sm:mt-28">Avec passion,<span className="block">par UQONI.</span></p>
         </section>
         <footer className="py-10 text-center text-sm text-slate-500">UQONI ONE · Growth Infrastructure</footer>
       </div>
