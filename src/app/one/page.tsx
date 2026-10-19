@@ -40,11 +40,9 @@ export default function OneLauncher() {
         </section>
         <section id="applications" aria-labelledby="apps-heading" className="mt-6 scroll-mt-24 rounded-[20px] bg-[#E9EDF9] p-3 sm:mt-8 sm:rounded-[30px] sm:p-8">
           <div className="mb-3 flex items-center justify-between"><h2 id="apps-heading" className="text-lg font-extrabold">Vos espaces UQONI</h2><Grid2X2 size={20} className="text-[#0248D7]"/></div>
-          <div className="grid grid-cols-4 gap-2 sm:gap-3">
-            {primary.map(({name,href,icon:Icon})=><Link key={name} href={href} className="group flex aspect-square min-w-0 flex-col items-center justify-center rounded-xl bg-white p-1.5 text-center shadow-sm transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0248D7] sm:p-3"><div className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF3FF] transition group-hover:scale-105"><Icon className="text-[#0248D7]" size={22}/></div><span className="break-words text-[10px] font-bold leading-tight sm:text-xs">{name}</span></Link>)}
-          </div>
-          <div className="mt-2 grid grid-cols-4 gap-2 sm:gap-3">
-            {modules.map(({name,icon:Icon})=><div key={name} className="flex aspect-square min-w-0 flex-col items-center justify-center rounded-xl bg-white p-1.5 text-center shadow-sm sm:p-3"><div className="mb-1.5 flex h-9 w-9 items-center justify-center rounded-xl bg-[#EEF3FF]"><Icon className="text-[#0248D7]" size={22}/></div><span className="break-words text-[10px] font-bold leading-tight sm:text-xs">{name}</span></div>)}
+          <div className="grid grid-cols-4 items-stretch gap-2 sm:gap-3">
+            {primary.map(({name,href,icon:Icon})=><Link key={name} href={href} className="group flex aspect-square min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white p-1.5 text-center shadow-sm transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0248D7] sm:p-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EEF3FF] transition group-hover:scale-105"><Icon className="text-[#0248D7]" size={22}/></span><span className="line-clamp-2 w-full break-words text-[10px] font-bold leading-tight sm:text-xs">{name}</span></Link>)}
+            {modules.map(({name,icon:Icon})=><div key={name} className="flex aspect-square min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl bg-white p-1.5 text-center shadow-sm sm:p-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EEF3FF]"><Icon className="text-[#0248D7]" size={22}/></span><span className="line-clamp-2 w-full break-words text-[10px] font-bold leading-tight sm:text-xs">{name}</span></div>)}
           </div>
         </section>
         <section id="nouveautes" aria-labelledby="news-heading" className="mt-10 scroll-mt-24">
