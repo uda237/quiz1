@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, House, ChevronRight, Bell, ScanLine, Smartphone, MonitorSmartphone, Globe2, Video, CreditCard } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, GraduationCap, LayoutDashboard, Palette, Search, ShieldCheck, ShoppingBag, Sparkles, Users, Wallet, Wifi, Grid2X2, House, ChevronRight, Bell, Smartphone, Globe2 } from "lucide-react";
 
 const primary = [
   { name: "Agence", detail: "Sites web, design et marketing", href: "/services", icon: BriefcaseBusiness },
