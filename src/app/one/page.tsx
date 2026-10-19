@@ -30,14 +30,18 @@ export default function OneLauncher() {
         </div>
       </header>
       <div className="mx-auto max-w-6xl min-w-0 px-4 pt-[64px] sm:px-5 sm:pt-[76px]">
-        <section aria-labelledby="hero-heading" className="uqoni-hero mt-4 overflow-hidden rounded-[26px] bg-[#1142C6] text-white shadow-sm sm:mt-6 sm:rounded-[30px]">
-          <div className="uqoni-hero-copy relative px-5 pb-7 pt-6 sm:px-10 sm:pb-10 sm:pt-9">
-            <div className="flex items-start justify-between gap-3"><span className="text-sm font-semibold text-blue-100">Bienvenue dans UQONI ONE</span><Link href="/services" aria-label="Découvrir les services UQONI" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0248D7]"><ChevronRight size={23}/></Link></div>
-            <h1 id="hero-heading" className="mt-4 max-w-lg text-[clamp(2rem,8vw,3.8rem)] font-black leading-[1.08] tracking-tight">Vos projets digitaux, plus loin avec UQONI.</h1>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
+        <section aria-labelledby="hero-heading" className="uqoni-hero sticky top-[64px] z-0 mt-4 isolate flex min-h-[360px] flex-col justify-center overflow-hidden rounded-[26px] bg-[#1142C6] text-white sm:top-[76px] sm:mt-6 sm:min-h-[440px] sm:rounded-[30px]">
+          <div aria-hidden="true" className="absolute inset-0 z-[-1] overflow-hidden">
+            <Image src="/one/uqoni-ecosystem-hero.svg" alt="" fill priority sizes="(max-width: 640px) 100vw, 960px" className="object-cover object-center opacity-30 grayscale" />
+            <div className="absolute inset-0 bg-[#1142C6]/65" />
           </div>
-          <div className="uqoni-hero-art relative w-full overflow-hidden bg-[#8CC6F0]"><Image src="/one/uqoni-ecosystem-hero.svg" alt="Illustration UQONI : ordinateur, application mobile et assistant IA" width={960} height={460} priority className="block h-auto w-full object-contain" sizes="(max-width: 640px) 100vw, 960px" /></div>
+          <div className="relative px-6 py-10 sm:px-10 sm:py-14">
+            <div className="flex items-start justify-between gap-3"><span className="text-sm font-semibold text-blue-100">Bienvenue dans UQONI ONE</span><Link href="/services" aria-label="Découvrir les services UQONI" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0248D7]"><ChevronRight size={23}/></Link></div>
+            <h1 id="hero-heading" className="uqoni-hero-title mt-6 max-w-lg text-[clamp(2rem,8vw,3.8rem)] font-black leading-[1.08] tracking-tight">Vos projets digitaux, plus loin avec UQONI.</h1>
+            <p className="uqoni-hero-subtitle mt-5 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
+          </div>
         </section>
+        <div className="relative z-10 mt-5 rounded-t-[28px] bg-white pt-5 sm:mt-8 sm:pt-7">
         <section aria-label="Accès rapide UQONI" className="mt-4">
           <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#087EA8] px-4 py-4 text-white sm:px-6">
             <div className="min-w-0"><p className="text-base font-extrabold sm:text-lg">Lancez votre projet</p><p className="mt-1 text-xs text-white/90 sm:text-sm">Sites web, design et applications</p></div>
@@ -113,6 +117,7 @@ export default function OneLauncher() {
           <p className="mt-16 select-none text-[clamp(2.75rem,10vw,7rem)] font-black leading-[0.95] tracking-[-0.07em] text-[#B9B9B9] sm:mt-28">Avec passion,<span className="block">par UQONI.</span></p>
         </section>
         <footer className="py-10 text-center text-sm text-slate-500">UQONI ONE · Growth Infrastructure</footer>
+        </div>
       </div>
       <nav aria-label="Navigation mobile" className="fixed inset-x-0 bottom-0 z-30 grid w-full grid-cols-5 items-center gap-0 border-t border-slate-200 bg-white/95 px-1 pt-2 pb-[calc(env(safe-area-inset-bottom)+8px)] shadow-[0_-6px_24px_rgba(11,16,32,0.08)] backdrop-blur-lg sm:hidden">
         <Link href="/one" aria-current="page" className="flex min-h-16 min-w-0 flex-col items-center justify-center gap-1 rounded-xl text-[#0248D7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0248D7] text-white"><House size={20}/></span><span className="text-[10px] font-bold">Accueil</span></Link>
