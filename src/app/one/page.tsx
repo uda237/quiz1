@@ -30,13 +30,13 @@ export default function OneLauncher() {
         </div>
       </header>
       <div className="mx-auto max-w-6xl min-w-0 px-4 pt-[64px] sm:px-5 sm:pt-[76px]">
-        <section aria-labelledby="hero-heading" className="mt-4 overflow-hidden rounded-[26px] bg-[#1142C6] text-white shadow-sm sm:mt-6 sm:rounded-[30px]">
-          <div className="relative px-5 pb-7 pt-6 sm:px-10 sm:pb-10 sm:pt-9">
+        <section aria-labelledby="hero-heading" className="uqoni-hero mt-4 overflow-hidden rounded-[26px] bg-[#1142C6] text-white shadow-sm sm:mt-6 sm:rounded-[30px]">
+          <div className="uqoni-hero-copy relative px-5 pb-7 pt-6 sm:px-10 sm:pb-10 sm:pt-9">
             <div className="flex items-start justify-between gap-3"><span className="text-sm font-semibold text-blue-100">Bienvenue dans UQONI ONE</span><Link href="/services" aria-label="Découvrir les services UQONI" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0248D7]"><ChevronRight size={23}/></Link></div>
             <h1 id="hero-heading" className="mt-4 max-w-lg text-[clamp(2rem,8vw,3.8rem)] font-black leading-[1.08] tracking-tight">Vos projets digitaux, plus loin avec UQONI.</h1>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
           </div>
-          <div className="relative w-full overflow-hidden bg-[#8CC6F0]"><Image src="/one/uqoni-ecosystem-hero.svg" alt="Illustration UQONI : ordinateur, application mobile et assistant IA" width={960} height={460} priority className="block h-auto w-full object-contain" sizes="(max-width: 640px) 100vw, 960px" /></div>
+          <div className="uqoni-hero-art relative w-full overflow-hidden bg-[#8CC6F0]"><Image src="/one/uqoni-ecosystem-hero.svg" alt="Illustration UQONI : ordinateur, application mobile et assistant IA" width={960} height={460} priority className="block h-auto w-full object-contain" sizes="(max-width: 640px) 100vw, 960px" /></div>
         </section>
         <section aria-label="Accès rapide UQONI" className="mt-4">
           <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#087EA8] px-4 py-4 text-white sm:px-6">
