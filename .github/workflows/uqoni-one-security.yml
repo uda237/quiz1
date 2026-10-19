@@ -1,0 +1,24 @@
+name: UQONI ONE security regression
+on:
+  pull_request:
+    paths:
+      - "src/app/client/**"
+      - "src/app/workspace/**"
+      - "src/app/one/**"
+      - "src/lib/session.ts"
+      - "src/lib/format.ts"
+      - "tests/uqoni-one-security.test.mjs"
+      - ".github/workflows/uqoni-one-security.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run static security regression checks
+        run: node --test tests/uqoni-one-security.test.mjs
