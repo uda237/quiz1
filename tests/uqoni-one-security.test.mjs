@@ -13,7 +13,7 @@ test("client portal requires verified Supabase user on server", () => {
 
 test("workspace uses existing server-side administrator gate", () => {
   const source = read("src/app/workspace/page.tsx");
-  assert.match(source, /await requireAdmin\(\)/);
+  assert.match(source, /await requireAdmin\("\/workspace"\)/);
   const session = read("src/lib/session.ts");
   assert.match(session, /s\.profile\?\.role !== "admin"/);
 });
