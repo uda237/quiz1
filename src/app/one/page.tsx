@@ -30,15 +30,15 @@ export default function OneLauncher() {
         </div>
       </header>
       <div className="w-full min-w-0 pt-[64px] sm:pt-[76px]">
-        <section aria-labelledby="hero-heading" className="uqoni-hero sticky top-[64px] z-0 isolate flex min-h-[calc(100dvh-64px)] w-full flex-col justify-center overflow-hidden bg-[#1142C6] text-white sm:top-[76px] sm:min-h-[calc(100dvh-76px)]">
+        <section aria-labelledby="hero-heading" className="uqoni-hero sticky top-[64px] z-0 isolate flex h-[clamp(220px,51vw,355px)] w-full flex-col justify-center overflow-hidden bg-[#1142C6] text-white sm:top-[76px] sm:h-[clamp(300px,35vw,420px)]">
           <div aria-hidden="true" className="absolute inset-0 z-[-1] overflow-hidden">
             <Image src="/one/uqoni-ecosystem-hero.svg" alt="" fill priority sizes="(max-width: 640px) 100vw, 960px" className="object-cover object-center opacity-30 grayscale" />
             <div className="absolute inset-0 bg-[#1142C6]/65" />
           </div>
-          <div className="relative mx-auto w-full max-w-6xl px-6 py-10 sm:px-10 sm:py-14">
+          <div className="relative mx-auto w-full max-w-6xl px-6 py-5 sm:px-10 sm:py-8">
             <div className="flex items-start justify-between gap-3"><span className="text-sm font-semibold text-blue-100">Bienvenue dans UQONI ONE</span><Link href="/services" aria-label="Découvrir les services UQONI" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0248D7]"><ChevronRight size={23}/></Link></div>
-            <h1 id="hero-heading" className="uqoni-hero-title mt-6 max-w-lg text-[clamp(2rem,8vw,3.8rem)] font-black leading-[1.08] tracking-tight">Vos projets digitaux, plus loin avec UQONI.</h1>
-            <p className="uqoni-hero-subtitle mt-5 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
+            <h1 id="hero-heading" className="uqoni-hero-title mt-3 max-w-lg text-[clamp(1.5rem,5.5vw,3.2rem)] font-black leading-[1.08] tracking-tight">Vos projets digitaux, plus loin avec UQONI.</h1>
+            <p className="uqoni-hero-subtitle mt-3 max-w-lg text-xs leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
           </div>
         </section>
         <div className="relative z-10 -mt-8 min-h-screen w-full min-w-0 rounded-t-[30px] bg-white pt-6 shadow-[0_-12px_28px_rgba(11,16,32,0.10)] sm:-mt-10 sm:rounded-t-[36px] sm:pt-8">
