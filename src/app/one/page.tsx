@@ -20,7 +20,7 @@ export default function OneLauncher() {
   return (
     <main className="min-h-screen min-w-0 scroll-smooth bg-white pb-28 text-[#0B1020] [scroll-padding-top:88px]">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur" aria-label="En-tête UQONI ONE">
-        <div className="mx-auto flex max-w-6xl min-w-0 items-center justify-between gap-2 px-4 py-3 sm:px-5 sm:py-4">
+        <div className="mx-auto flex min-h-16 max-w-6xl min-w-0 items-center justify-between gap-2 px-4 py-2 sm:min-h-[76px] sm:px-5 sm:py-3">
           <Link href="/one" className="shrink-0 text-xl font-black tracking-[-.06em] text-[#0248D7] sm:text-2xl" aria-label="UQONI ONE, accueil">UQONI<span className="ml-1 rounded-full bg-[#0248D7] px-2 py-1 text-xs tracking-normal text-white">ONE</span></Link>
           <nav aria-label="Actions rapides" className="flex shrink-0 items-center gap-2 text-[#0B1020] sm:gap-4">
             <a href="#applications" aria-label="Voir les applications" className="rounded-lg p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"><Grid2X2 size={21}/></a>
@@ -41,7 +41,7 @@ export default function OneLauncher() {
             <p className="uqoni-hero-subtitle mt-5 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, design, applications, IA et automatisations.</p>
           </div>
         </section>
-        <div className="relative z-10 -mt-8 min-h-screen w-full rounded-t-[30px] bg-white pt-6 shadow-[0_-12px_28px_rgba(11,16,32,0.10)] sm:-mt-10 sm:rounded-t-[36px] sm:pt-8">
+        <div className="relative z-10 -mt-8 min-h-screen w-full min-w-0 rounded-t-[30px] bg-white pt-6 shadow-[0_-12px_28px_rgba(11,16,32,0.10)] sm:-mt-10 sm:rounded-t-[36px] sm:pt-8">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-5">
         <section aria-label="Accès rapide UQONI" className="mt-4">
           <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#087EA8] px-4 py-4 text-white sm:px-6">
