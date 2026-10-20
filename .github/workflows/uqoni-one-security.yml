@@ -1,0 +1,29 @@
+name: UQONI ONE security regression
+on:
+  pull_request:
+    paths:
+      - "src/app/client/**"
+      - "src/app/workspace/**"
+      - "src/app/one/**"
+      - "src/lib/session.ts"
+      - "src/lib/format.ts"
+      - "src/lib/supabase/**"
+      - "src/lib/database.types.ts"
+      - "src/app/(auth)/login/**"
+      - "src/components/auth-form.tsx"
+      - "tests/uqoni-one-security.test.mjs"
+      - "docs/qa/UQONI-ONE-G3-READONLY-RLS-AUDIT.sql"
+      - ".github/workflows/uqoni-one-security.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run static security regression checks
+        run: node --test tests/uqoni-one-security.test.mjs

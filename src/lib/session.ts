@@ -22,8 +22,8 @@ export async function requireUser(path = "/home") {
   if (!s.user) redirect(`/login?next=${encodeURIComponent(path)}`);
   return { ...s, user: s.user };
 }
-export async function requireAdmin() {
-  const s = await requireUser("/admin");
+export async function requireAdmin(path = "/admin") {
+  const s = await requireUser(path);
   if (s.profile?.role !== "admin") redirect("/home");
   return s;
 }

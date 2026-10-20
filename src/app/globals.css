@@ -891,12 +891,6 @@ strong {
 .skip-link:focus {
   top: 10px;
 }
-.mt-6 {
-  margin-top: 24px;
-}
-.text-sm {
-  font-size: 12px;
-}
 @keyframes pulse {
   50% {
     opacity: 0.5;
@@ -1257,4 +1251,15 @@ strong {
   .filter-bar {
     grid-template-columns: 1fr;
   }
+}
+
+/* UQONI ONE: stationary blue hero; only the text animates. */
+.uqoni-hero-title { animation: uqoni-title-in 850ms ease-out both; }
+.uqoni-hero-subtitle { animation: uqoni-title-in 850ms 180ms ease-out both; }
+@keyframes uqoni-title-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .uqoni-hero-title, .uqoni-hero-subtitle { animation: none; }
 }
