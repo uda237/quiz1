@@ -43,17 +43,32 @@ export default function OneLauncher() {
         </section>
         <div className="relative z-10 -mt-8 min-h-screen w-full min-w-0 rounded-t-[30px] bg-white pt-6 shadow-[0_-12px_28px_rgba(11,16,32,0.10)] sm:-mt-10 sm:rounded-t-[36px] sm:pt-8">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-5">
-        <section aria-label="Accès rapide UQONI" className="mt-4">
-          <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#087EA8] px-4 py-4 text-white sm:px-6">
-            <div className="min-w-0"><p className="text-base font-extrabold sm:text-lg">Lancez votre projet</p><p className="mt-1 text-xs text-white/90 sm:text-sm">Sites web, design et applications</p></div>
-            <Link href="/services" className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-full bg-white px-3 py-2 text-xs font-bold text-[#075E82] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B1020] sm:text-sm">Explorer <ChevronRight size={16}/></Link>
-          </div>
-        </section>
         <section id="applications" aria-labelledby="apps-heading" className="mt-6 scroll-mt-24 rounded-[20px] bg-[#E9EDF9] p-3 sm:mt-8 sm:rounded-[30px] sm:p-8">
           <div aria-hidden="true" className="mx-auto mb-3 h-1 w-10 rounded-full bg-[#BCC5DD]" /><div className="mb-3 flex items-center justify-between"><h2 id="apps-heading" className="text-lg font-extrabold">Vos espaces UQONI</h2><Grid2X2 size={20} className="text-[#0248D7]"/></div>
           <div className="grid grid-cols-4 auto-rows-auto items-stretch gap-2.5 sm:gap-3">
             {primary.map(({name,detail,href,icon:Icon})=><Link key={name} href={href} className="group col-span-2 flex aspect-[2/1] min-w-0 items-center justify-between gap-1.5 overflow-hidden rounded-xl bg-white p-2.5 shadow-sm transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0248D7] sm:p-4"><span className="min-w-0"><span className="block text-xs font-extrabold leading-tight sm:text-lg">{name}</span><span className="mt-1 line-clamp-2 block text-[9px] leading-tight text-slate-500 sm:text-xs">{detail}</span></span><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EEF3FF] text-[#0248D7] sm:h-14 sm:w-14"><Icon size={27}/></span></Link>)}
             {modules.map(({name,icon:Icon})=><div key={name} className="flex aspect-square min-w-0 flex-col items-center justify-center gap-1 rounded-xl bg-white p-1 text-center shadow-sm sm:gap-1.5 sm:p-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#EEF3FF] min-[390px]:h-9 min-[390px]:w-9"><Icon className="text-[#0248D7]" size={22}/></span><span className="line-clamp-2 w-full break-words text-[9px] font-bold leading-tight min-[390px]:text-[10px] sm:text-xs">{name}</span></div>)}
+          </div>
+        </section>
+        <section aria-labelledby="uqoni-promo-heading" className="mt-9 sm:mt-12">
+          <Link href="/services" className="group block overflow-hidden rounded-[26px] bg-[#1142C6] text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0248D7] sm:rounded-[30px]">
+            <div className="px-5 pb-6 pt-6 sm:px-9 sm:pb-8 sm:pt-8">
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-sm font-semibold text-blue-100">Découvrez les services UQONI</p>
+                <span aria-hidden="true" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0248D7] transition-transform group-hover:translate-x-1"><ChevronRight size={22}/></span>
+              </div>
+              <h2 id="uqoni-promo-heading" className="mt-3 max-w-lg text-[clamp(1.9rem,7vw,3.3rem)] font-black leading-[1.08] tracking-tight">Donnez vie à vos projets.</h2>
+              <p className="mt-4 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">Sites web, applications, design et automatisations pour votre activité.</p>
+            </div>
+            <div className="relative aspect-[1.85/1] w-full overflow-hidden bg-[#8CC6F0] sm:aspect-[2.5/1]">
+              <Image src="/one/uqoni-ecosystem-hero.svg" alt="Écosystème digital UQONI : ordinateur, application et intelligence artificielle" fill sizes="(max-width: 640px) 100vw, 960px" className="object-cover object-center"/>
+            </div>
+          </Link>
+        </section>
+        <section aria-label="Accès rapide UQONI" className="mt-5">
+          <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#087EA8] px-4 py-4 text-white sm:px-6">
+            <div className="min-w-0"><p className="text-base font-extrabold sm:text-lg">Lancez votre projet</p><p className="mt-1 text-xs text-white/90 sm:text-sm">Sites web, design et applications</p></div>
+            <Link href="/services" className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-full bg-white px-3 py-2 text-xs font-bold text-[#075E82] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B1020] sm:text-sm">Explorer <ChevronRight size={16}/></Link>
           </div>
         </section>
         <section id="nouveautes" aria-labelledby="whats-new-heading" className="mt-10 scroll-mt-24">
